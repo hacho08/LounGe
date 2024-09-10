@@ -1,0 +1,71 @@
+/* All styling */
+body {
+    background-color: #FDFDFD;
+    margin: 0; /* 기본적인 여백을 제거 */
+    padding: 0;
+}
+/* Header styling */
+.header {
+    display: flex;
+    height: 9%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    padding-top: 5%; /* 위쪽 마진 */
+    padding-bottom: 2%; /* 아래쪽 마진 */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    border: none;
+    background: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+.login-btn, .review-btn {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #D9D9D9;
+    margin-right: 13px;
+}
+
+.header-icon {
+    margin-right: 13px;
+}
+
+
+.icon-user {
+    font-size: 18px;
+}
+
+hr {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.header-icon {
+    width: 37px;
+    height: 37px;
+}
