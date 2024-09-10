@@ -10,4 +10,9 @@ public class MainViewController {
     public String main() {
         return "main";
     }
+
+    @GetMapping("/review")
+    public String review() {
+        return "reviewList";
+    }
 }
