@@ -1,0 +1,41 @@
+<!-- reservationComplete.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
+<!--      layout:decorate="~{layout/layout}">-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>예약 완료</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<header class="header">
+    <div class="header-left">
+        <a href="/" class="logo">
+            <img th:src="@{/images/icon/logo icon.png}" alt="LounGe">
+        </a>
+    </div>
+    <div class="header-right">
+        <button class="btn review-btn"><img th:src="@{/images/icon/icon_write.png}" alt="Write Icon" class="header-icon">리뷰</button>
+        <button class="btn login-btn"><img th:src="@{/images/icon/icon_person.png}" alt="User Icon" class="header-icon"> 로그인</button>
+    </div>
+</header>
+<hr>
+<!-- Use the layout and insert content in the content fragment -->
+<!--<th:block layout:fragment="content">-->
+    <h2>예약이 완료되었습니다!</h2>
+    <p>LounGe에 입장할 때 제시해 주세요.</p>
+    <div>
+        <!-- 예약 정보와 QR 코드 등 -->
+        <img th:src="@{/images/reservation/complete/qr_image.png}" alt="QR Code">
+        <p>예약존: 스타일라운지</p>
+        <p>예약 일시: 2024년 9월 14일 오후 12:00</p>
+    </div>
+    <a href="/" class="button">홈으로 가기</a>
+<!--</th:block>-->
+
+</body>
+</html>

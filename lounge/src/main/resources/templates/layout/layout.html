@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>My Layout</title>
+
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<!-- Include the header -->
+<th:block th:replace="layout/fragments/header :: header"></th:block>
+
+<!-- Main content -->
+<th:block layout:fragment="content"></th:block>
+
+<!-- Include the footer (optional, 주석 해제 가능) -->
+<!--<th:block th:replace="fragments/footer :: footerLayout"></th:block>-->
+</body>
+</html>
