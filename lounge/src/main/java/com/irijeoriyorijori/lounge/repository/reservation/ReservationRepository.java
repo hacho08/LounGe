@@ -6,9 +6,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Date;
+
 
 public interface ReservationRepository extends JpaRepository<Reservation, String> {
-    @Query(value= "SELECT * FROM RESERVATION WHERE RESERVATION_ID" , nativeQuery = true)
-    List<Reservation> findReservationSearch(@Param(value = "search") String search);  //에약내역 있는지 확인
+
+
+    // 특정 날짜의 예약된 시간대를 조회
+    @Query("SELECT r FROM Reservation r WHERE r.productItemId = :productItemId AND r.startTime BETWEEN :startOfDay AND :endOfDay")
+    List<Reservation> findReservationsForDay(String productItemId, Date startOfDay, Date endOfDay);
 
 }
