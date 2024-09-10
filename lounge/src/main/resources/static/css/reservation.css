@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.header-actions button {
+    background-color: #f3f3f3;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.product-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-name {
+    text-align: left;
+    width: 100%;
+    font-size: 20px; /* 텍스트 크기를 조금 키웁니다 */
+    font-weight: bold;
+    margin-top: 20px; /* 간격을 넓혀줍니다 */
+
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.image-dots {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+
+.dot.active {
+    background-color: orange;
+}
+
+.reservation-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.calendar-title {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.reservation-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.month-select {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.month-select span {
+    cursor: pointer;
+}
+
+.calendar {
+    margin-bottom: 30px; /* 캘린더와 하단의 텍스트 사이 간격을 조정 */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar_legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 20px; /* 캘린더와 레전드 사이 간격 조정 */
+    font-size: 14px;
+    color: #777;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.days span {
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.days span.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.days span.today {
+    background-color: orange;
+    color: white;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.time-guide-left {
+    font-size: 14px;
+    margin-bottom: 20px; /* 간격을 넓혀줍니다 */
+    text-align: left;
+    color: #555;
+}
+
+.legend-section {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.legend {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.legend.available {
+    background-color: orange;
+}
+
+.legend.closed {
+    background-color: #ccc;
+}
+
+.calendar_time_selector {
+    margin-top: 10px;
+}
+
+.time_slots_container {
+    display: flex;
+    justify-content: center;
+}
+
+ul.time_slots {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.time_slot {
+    background-color: #ffe3c2;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.time_slot.closed {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.time_slot.available:hover {
+    background-color: #ffb86b;
+}
+
+.reservation-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.reservation-button {
+    padding: 15px 30px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
