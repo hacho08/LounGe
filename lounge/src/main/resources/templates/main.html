@@ -11,19 +11,21 @@
         @font-face {
             font-family: 'Pretendard';
             src: url('/fonts/PretendardVariable.ttf') format('truetype');
-            font-weight: 100 900;
+            font-weight: 100 900; /* 가변 폰트이므로 다양한 굵기 지원 */
             font-style: normal;
         }
 
+        /* 전체 레이아웃 설정 */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Pretendard', Arial, sans-serif;
+            font-family: 'Pretendard', Arial, sans-serif; /* Pretendard 폰트 적용 */
             box-sizing: border-box;
-            background-color: #f4f4f4;
+            background-color: #f4f4f4; /* 배경색 */
         }
 
+        /* 페이지를 상단(헤더)과 하단(콘텐츠 영역)으로 나누기 */
         .container {
             display: flex;
             flex-direction: column;
@@ -53,94 +55,209 @@
         /* 리뷰와 로그인 버튼 스타일 */
         .header button {
             display: flex;
-            align-items: center;
+            align-items: center; /* 텍스트와 이미지를 수직으로 가운데 정렬 */
             padding: 10px 15px;
             border: 1px solid #ddd;
             background-color: #fff;
             cursor: pointer;
         }
 
+        /* 버튼 안의 이미지 스타일 */
         .header button img {
-            width: 20px;
+            width: 20px; /* 아이콘 크기 */
             height: 20px;
-            margin-right: 8px;
+            margin-right: 8px; /* 이미지와 텍스트 간 간격 */
         }
 
         .header button:hover {
             background-color: #eee;
         }
 
-        /* 하단 영역 */
+        /* 하단 영역 (사이드바 + 메인 컨텐츠) */
         .content {
             display: flex;
             flex: 1;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* 중앙 정렬 */
+            align-items: center; /* 수직 중앙 정렬 */
         }
 
+        /* 사이드바 설정 */
         .sidebar {
             width: 25%;
-            background-color: #ffffff;
+            background-color: #ffffff; /* 흰색 배경 */
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
+            border-radius: 10px; /* 모서리를 둥글게 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+            border: 1px solid #ddd; /* 옅은 테두리 */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        /* 모달 스타일 */
-        .modal {
-            display: none;
-            position: absolute;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            width: 400px;
-            border-radius: 15px;
-            top: 50px;
-            left: 50px;
+        /* What's New 영역 */
+        .whats-new {
+            margin-bottom: 20px;
+        }
+
+        /* What's New 타이틀 스타일 */
+        .whats-new-title {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
         }
 
-        .modal.active {
-            display: block;
+        .whats-new-title h2 {
+            font-size: 18px;
+            color: #E92662; /* 빨간색 */
+            font-weight: bold;
         }
 
-        /* 이미지 스타일 */
-        .modal img {
-            width: 150px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        /* 텍스트 스타일 */
-        .modal h2 {
+        .whats-new-title .plus-icon {
             font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .modal button {
-            width: 100px;
-            padding: 10px;
-            margin: 10px;
-            border: none;
-            border-radius: 10px;
+            color: #aaa;
             cursor: pointer;
         }
 
-        .modal .reservation-btn {
-            background-color: #FF9C52;
-            color: white;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        .modal .report-btn {
-            background-color: #E0E0E0;
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        /* 실시간 공간 상태 */
+        .real-time-status {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        /* 실시간 공간 상태 타이틀과 선 추가 */
+        .real-time-status h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        /* 실시간 공간 상태 - 어서와요 섹션 */
+        .welcome-section h3 {
+            font-size: 20px;
+            color: #E92662;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .welcome-section p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* 실시간 공간 상태 - 하위 섹션 스타일 */
+        .status-section {
+            margin-bottom: 15px;
+        }
+
+        .status-section h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #191F28;
+        }
+
+        .status-section p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* 온도/습도 섹션 */
+        .temperature-humidity {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .temperature-humidity .icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .temperature-humidity img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .temperature-humidity .value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .temperature-humidity-divider {
+            border-top: 1px solid #e0e0e0;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        /* 공기 청정도 도표 */
+        .air-quality {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .air-quality-bar {
+            width: 80%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .air-quality-fill {
+            width: 90%; /* 공기 청정도가 90%임을 가정 */
+            height: 100%;
+            background-color: #b3e5fc;
+            border-radius: 5px;
+        }
+
+        .air-quality-label {
+            font-size: 14px;
             color: #333;
+        }
+
+        /* 메인 3D 공간 */
+        .main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* 3D 공간에 이미지 배경 설정 */
+        .three-d-space {
+            width: 500px;
+            height: 400px;
+            background-image: url('/images/main/main_lounge.png');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
         }
 
         /* + 버튼 스타일 */
@@ -161,11 +278,60 @@
             transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
         }
 
+        /* 호버 시 버튼이 커지고 배경색 및 글자 색상이 변경되는 효과 */
         .plus-button:hover {
             transform: scale(1.2);
-            background-color: #fff;
-            color: #FF9C52;
+            background-color: #fff; /* 배경색 변경 */
+            color: #FF9C52; /* + 글자 색 변경 */
         }
+
+        /* 모달 기본 스타일 */
+        .modal {
+            display: none;
+            position: absolute;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-radius: 15px;
+            width: 300px;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #191F28;
+        }
+
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .modal-content button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 <body>
@@ -177,10 +343,12 @@
             <img src="/images/icon/logo icon.png" alt="LounGe Logo">
         </div>
         <div class="nav-buttons">
+            <!-- 리뷰 버튼 -->
             <button>
                 <img src="/images/icon/icon_write.png" alt="리뷰 아이콘">
                 리뷰
             </button>
+            <!-- 로그인 버튼 -->
             <button>
                 <img src="/images/icon/icon_person.png" alt="로그인 아이콘">
                 로그인
@@ -188,12 +356,55 @@
         </div>
     </div>
 
-    <!-- 하단 영역 -->
+    <!-- 하단 영역 (사이드바 + 메인 컨텐츠) -->
     <div class="content">
+        <!-- 사이드바 -->
         <div class="sidebar">
-            <!-- 사이드바 내용 -->
+            <!-- What's New 섹션 -->
+            <div class="whats-new">
+                <div class="whats-new-title">
+                    <h2>What's New</h2>
+                    <div class="plus-icon">+</div>
+                </div>
+                <ul>
+                    <li>- 에어컨 필터 청소 완료!</li>
+                    <li>- 스타일러 옷걸이를 추가했습니다.</li>
+                    <li>- 예약 서비스 3.8 업데이트 정보</li>
+                    <li>- 쓸 말이 더 없는데?</li>
+                    <li>- LounGe 서비스 런칭 이벤트! 와!</li>
+                </ul>
+            </div>
+
+            <!-- 실시간 공간 상태 섹션 -->
+            <div class="real-time-status">
+                <h2>실시간 공간 상태</h2>
+
+                <!-- 어서와요 섹션 -->
+                <div class="welcome-section">
+                    <h3>어서와요!</h3>
+                    <p>현재 라운지에 사람이 많지 않아요</p>
+                </div>
+
+                <!-- 온도/습도 섹션 -->
+                <div class="status-section">
+                    <h3>온도/습도</h3>
+                    <img src="/images/main/sidebar/card_temperature.png" alt="온도/습도 카드" style="width: 100%;">
+                </div>
+
+                <!-- 공기 청정도 섹션 -->
+                <div class="status-section">
+                    <div class="air-quality">
+                        <h3>공기 청정도</h3>
+                        <span class="air-quality-label">최고</span>
+                    </div>
+                    <div class="air-quality-bar">
+                        <div class="air-quality-fill"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
+        <!-- 메인 3D 공간 -->
         <div class="main">
             <div class="three-d-space">
                 <!-- + 버튼 -->
@@ -205,19 +416,25 @@
 
 <!-- 모달 창 -->
 <div class="modal" id="modal">
-    <h2>스타일러</h2>
-    <img src="/images/main/styler.png" alt="스타일러 이미지">
-    <button class="reservation-btn">예약</button>
-    <button class="report-btn">고장신고</button>
+    <h2>스타일러 예약</h2>
+    <div class="modal-content">
+        <button>예약</button>
+        <button>고장신고</button>
+    </div>
+    <button class="close-btn" id="closeBtn">닫기</button>
 </div>
 
 <script>
+    // 모달 및 버튼 선택
     const modal = document.getElementById('modal');
     const modalBtn = document.getElementById('modalBtn');
     const closeBtn = document.getElementById('closeBtn');
 
-    // 모달 열기
+    // 모달 열기 (모달 위치를 버튼 위치에 맞추기)
     modalBtn.addEventListener('click', function() {
+        const btnRect = modalBtn.getBoundingClientRect();
+        modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
+        modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
         modal.classList.add('active');
     });
 
