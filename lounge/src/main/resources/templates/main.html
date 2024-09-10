@@ -2,9 +2,230 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LounGe - Product Booking</title>
+
+    <style>
+        /* Pretendard Variable 폰트 적용 */
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('/fonts/PretendardVariable.ttf') format('truetype');
+            font-weight: 100 900;
+            font-style: normal;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Pretendard', Arial, sans-serif;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* 상단 영역 (헤더) */
+        .header {
+            background-color: #f8f8f8;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header .logo img {
+            width: 150px;
+        }
+
+        .header .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* 리뷰와 로그인 버튼 스타일 */
+        .header button {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .header button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        .header button:hover {
+            background-color: #eee;
+        }
+
+        /* 하단 영역 */
+        .content {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: absolute;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 400px;
+            border-radius: 15px;
+            top: 50px;
+            left: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        /* 이미지 스타일 */
+        .modal img {
+            width: 150px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* 텍스트 스타일 */
+        .modal h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .modal button {
+            width: 100px;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .modal .reservation-btn {
+            background-color: #FF9C52;
+            color: white;
+        }
+
+        .modal .report-btn {
+            background-color: #E0E0E0;
+            color: #333;
+        }
+
+        /* + 버튼 스타일 */
+        .plus-button {
+            width: 50px;
+            height: 50px;
+            background-color: #FFC193;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .plus-button:hover {
+            transform: scale(1.2);
+            background-color: #fff;
+            color: #FF9C52;
+        }
+    </style>
 </head>
 <body>
-Testing main page!
+
+<div class="container">
+    <!-- 상단 헤더 영역 -->
+    <div class="header">
+        <div class="logo">
+            <img src="/images/icon/logo icon.png" alt="LounGe Logo">
+        </div>
+        <div class="nav-buttons">
+            <button>
+                <img src="/images/icon/icon_write.png" alt="리뷰 아이콘">
+                리뷰
+            </button>
+            <button>
+                <img src="/images/icon/icon_person.png" alt="로그인 아이콘">
+                로그인
+            </button>
+        </div>
+    </div>
+
+    <!-- 하단 영역 -->
+    <div class="content">
+        <div class="sidebar">
+            <!-- 사이드바 내용 -->
+        </div>
+
+        <div class="main">
+            <div class="three-d-space">
+                <!-- + 버튼 -->
+                <div class="plus-button" id="modalBtn">+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 모달 창 -->
+<div class="modal" id="modal">
+    <h2>스타일러</h2>
+    <img src="/images/main/styler.png" alt="스타일러 이미지">
+    <button class="reservation-btn">예약</button>
+    <button class="report-btn">고장신고</button>
+</div>
+
+<script>
+    const modal = document.getElementById('modal');
+    const modalBtn = document.getElementById('modalBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    // 모달 열기
+    modalBtn.addEventListener('click', function() {
+        modal.classList.add('active');
+    });
+
+    // 모달 닫기
+    closeBtn.addEventListener('click', function() {
+        modal.classList.remove('active');
+    });
+</script>
+
 </body>
 </html>
