@@ -1,1 +1,86 @@
-* {     margin: 0;     padding: 0;     box-sizing: border-box; } body {     font-family: Arial, sans-serif;     background-color: #f9f9f9; } .container {     max-width: 1200px;     margin: 0 auto;     padding: 20px; } header {     display: flex;     justify-content: space-between;     align-items: center;     padding: 10px 0; } .logo {     display: flex;     align-items: center;     font-size: 24px;     font-weight: bold; } .logo-img {     width: 40px;     margin-right: 10px; } .header-actions button {     background-color: #f3f3f3;     border: none;     padding: 8px 16px;     margin-left: 10px;     cursor: pointer;     border-radius: 5px; } .main-content {     display: flex;     justify-content: space-between;     align-items: center;     gap: 50px; } /* Product Box */ .product-box {     display: flex;     flex-direction: column;     align-items: center;     width: 300px;     background-color: white;     padding: 20px;     border-radius: 10px;     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); } .product-name {     text-align: left;     width: 100%;     font-size: 20px;     font-weight: bold;     margin-top: 20px; } .product-image img {     width: 100%;     border-radius: 10px; } .image-dots {     margin-top: 10px;     text-align: center; } .dot {     display: inline-block;     width: 8px;     height: 8px;     background-color: #ccc;     border-radius: 50%;     margin: 0 4px; } .dot.active {     background-color: orange; } /* Flatpickr 달력 스타일 */ .flatpickr-calendar {     font-size: 14px;     max-width: 700px; /* 가로 크기를 늘림 */     margin: 0 auto;     border: none; /* 테두리 없애기 */     box-shadow: none; /* 그림자 없애기 */ } .flatpickr-months {     display: flex;     justify-content: center;     font-size: 18px; } .flatpickr-prev-month, .flatpickr-next-month {     font-size: 16px;     cursor: pointer; } .flatpickr-weekdays {     display: grid;     grid-template-columns: repeat(7, 1fr);     justify-items: center;     font-weight: bold;     font-size: 16px;     grid-gap: 20px; /* 요일 간의 간격을 늘림 */ } .flatpickr-day {     width: 80px; /* 날짜의 가로 크기를 키움 */     height: 50px; /* 날짜의 세로 크기 유지 */     display: flex;     justify-content: center;     align-items: center;     font-size: 16px;     cursor: pointer;     text-align: center;     margin: 0; } .flatpickr-day.today {     background-color: orange;     color: white;     border-radius: 5px; } .flatpickr-day.selected {     background-color: #ffc107;     color: white;     border-radius: 5px; } .flatpickr-day.disabled {     color: #ccc;     cursor: not-allowed; } .dayContainer {     display: grid;     grid-template-columns: repeat(7, 1fr);     justify-items: center;     grid-gap: 20px; /* 날짜 간의 가로 간격을 늘림 */ } /* 시간 슬롯 및 예약 버튼 스타일 동일 유지 */ .time-info {     display: flex;     justify-content: space-between;     align-items: center;     margin-bottom: 10px; } .time-guide-left {     font-size: 14px;     margin-bottom: 20px;     text-align: left;     color: #555; } .legend-section {     display: flex;     align-items: center;     font-size: 14px; } .legend {     width: 15px;     height: 15px;     display: inline-block;     margin-right: 5px; } .legend.available {     background-color: orange; } .legend.closed {     background-color: #ccc; } .calendar_time_selector {     margin-top: 10px; } .time_slots_container {     display: flex;     justify-content: center;     align-items: center;     position: relative; } ul.time_slots {     list-style: none;     padding: 0;     display: flex;     gap: 2px;     justify-content: center;     align-items: flex-start;     position: relative; } .time_slot {     background-color: #ffc299;     padding: 20px 0;     border-radius: 0;     cursor: pointer;     text-align: center;     width: 50px;     height: 60px;     position: relative; } .time_slot.closed {     background-color: #f2f2f2;     cursor: not-allowed; } .time_text {     position: absolute;     top: -25px;     font-size: 16px;     color: #333;     width: 100%;     text-align: center; } ul.time_slots .time_label.morning {     left: 0;     font-weight: bold; } ul.time_slots .time_label.afternoon {     left: calc(100% - 60px);     font-weight: bold; } .reservation-button-container {     display: flex;     justify-content: flex-end;     margin-top: 30px; } .reservation-button {     padding: 15px 30px;     background-color: #555;     color: white;     border: none;     border-radius: 5px;     cursor: pointer;     font-size: 18px; }
+ /* Pretendard Variable 폰트 적용 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/PretendardVariable.ttf') format('truetype');
+    font-weight: 100 900; /* 가변 폰트이므로 다양한 굵기 지원 */
+    font-style: normal;
+}
+
+/* All styling */
+body {
+    background-color: #fbfbfb;
+    margin: 0; /* 기본적인 여백을 제거 */
+    padding: 0;
+}
+/* Header styling */
+.header {
+    display: flex;
+    height: 12%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 47px;
+    margin-top: 30px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    padding-right: 17px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+.login-btn, .review-btn {
+    height: 37px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #D9D9D9;
+    margin-left: 13px;
+    margin-top: 30px;
+}
+
+.header-icon {
+    margin-right: 13px;
+}
+
+
+.icon-user {
+    font-size: 18px;
+}
+
+hr {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.header-icon {
+    width: 37px;
+    height: 37px;
+}
+

@@ -4,34 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/main.css">
     <title>LounGe - Product Booking</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
 
 </head>
 <body>
-
+<th:block th:replace="layout/fragments/header :: headerLayout"></th:block>
 <div class="container">
-    <!-- 상단 헤더 영역 -->
-    <div class="header">
-        <div class="logo">
-            <img src="/images/icon/logo icon.png" alt="LounGe Logo">
-        </div>
-        <div class="nav-buttons">
-            <!-- 리뷰 버튼 -->
-            <button>
-                <img src="/images/icon/icon_write.png" alt="리뷰 아이콘">
-                리뷰
-            </button>
-            <button>
-            <!-- 로그인 버튼 -->
-            <a href="/login">
-                <img src="/images/icon/icon_person.png" alt="로그인 아이콘">
-                로그인
-            </a>
-            </button>
-        </div>
-    </div>
-
     <!-- 하단 영역 (사이드바 + 메인 컨텐츠) -->
     <div class="content">
         <div class="sidebar">

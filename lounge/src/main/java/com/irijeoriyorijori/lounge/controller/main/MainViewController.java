@@ -19,7 +19,7 @@ public class MainViewController {
 
     @GetMapping("/review")
     public String review() {
-        return "reviewList";
+        return "review/reviewList";
     }
 
     @GetMapping("test")
