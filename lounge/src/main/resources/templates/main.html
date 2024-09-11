@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LounGe - Product Booking</title>
+
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+
 
 </head>
 <body>
@@ -14,7 +16,6 @@
 <div class="container">
     <!-- 하단 영역 (사이드바 + 메인 컨텐츠) -->
     <div class="content">
-        <!-- 사이드바 -->
         <div class="sidebar">
             <!-- What's New 섹션 -->
             <div class="whats-new">
@@ -34,25 +35,18 @@
             <!-- 실시간 공간 상태 섹션 -->
             <div class="real-time-status">
                 <h2>실시간 공간 상태</h2>
-
-                <!-- 어서와요 섹션 -->
                 <div class="welcome-section">
                     <h3>어서와요!</h3>
                     <p>현재 라운지에 사람이 많지 않아요</p>
                 </div>
-
                 <!-- 온도/습도 섹션 -->
                 <div class="status-section">
                     <h3>온도/습도</h3>
-                    <img src="/images/main/sidebar/card_temperature.png" alt="온도/습도 카드" style="width: 100%;">
+                    <img src="/images/main/sidebar/card_temperature.png" alt="온도/습도 카드">
                 </div>
-
-                <!-- 공기 청정도 섹션 -->
                 <div class="status-section">
-                    <div class="air-quality">
-                        <h3>공기 청정도</h3>
-                        <span class="air-quality-label">최상</span>
-                    </div>
+                    <h3>공기 청정도</h3>
+                    <span class="air-quality-label">최상</span>
                     <div class="air-quality-bar">
                         <div class="air-quality-fill"></div>
                     </div>
@@ -64,62 +58,101 @@
         <div class="main">
             <div class="three-d-space">
                 <!-- 홍익대 라운지 텍스트 -->
-                <div class="lounge-name">ㅇㅇ대 라운지</div>
+                <div class="lounge-name">럭키골드대학교 라운지</div>
 
-                <!-- + 버튼 -->
-                <div class="plus-button" id="modalBtn">+</div>
+                <!-- 4개의 + 버튼 추가 -->
+                <div class="plus-button" id="modalBtn1" style="top: 260px; left: 330px;">+</div>
+                <div class="plus-button" id="modalBtn2" style="top: 160px; left: 430px;">+</div>
+                <div class="plus-button" id="modalBtn3" style="top: 210px; left: 130px;">+</div>
+                <div class="plus-button" id="modalBtn4" style="top: 60px; left: 230px;">+</div>
             </div>
         </div>
     </div>
 </div>
 
-
-
-
-
-
-
-<!-- 모달 창 -->
-<div class="modal" id="modal">
-    <!-- 왼쪽 -->
+<!-- 각 버튼에 맞는 모달 창들 -->
+<div class="modal" id="modal1">
     <div class="modal-content">
-        <h2>스타일러 예약</h2>
-        <button class="reservation-btn"><a href="/reservation" class="button">예약</a></button>
-        <button class="report-btn"><a href="/report" class="button">고장신고</a></button>
-
+        <h2>Styler</h2>
+        <button class="reservation-btn"><a href="/reservation1" class="button">예약</a></button>
+        <button class="report-btn"><a href="/report1" class="button">고장신고</a></button>
     </div>
-
-    <!-- 오른쪽 -->
-    <img src="/images/product/styler_modal_image.png" alt="스타일러 이미지">
+    <img src="/images/product/styler_modal_image.png" alt="1)스타일러">
 </div>
 
+<div class="modal" id="modal2">
+    <div class="modal-content">
+        <h2>Shoe Dresser</h2>
+        <button class="reservation-btn"><a href="/reservation2" class="button">예약</a></button>
+        <button class="report-btn"><a href="/report2" class="button">고장신고</a></button>
+    </div>
+    <img src="/images/product/shoedresser_modal_image.png" alt="2)슈드레서">
+</div>
 
+<div class="modal" id="modal3">
+    <div class="modal-content">
+        <h2>수면 케어룸</h2>
+        <button class="reservation-btn"><a href="/reservation3" class="button">예약</a></button>
+        <button class="report-btn"><a href="/report3" class="button">고장신고</a></button>
+    </div>
+    <img src="/images/product/bedroom_modal_image.png" alt="3) 수면 케어룸">
+</div>
 
+<div class="modal" id="modal4">
+    <div class="modal-content">
+        <h2>Healing Me</h2>
+        <button class="reservation-btn"><a href="/reservation4" class="button">예약이 다 찼어요ㅠㅠ</a></button>
+        <button class="report-btn"><a href="/report4" class="button">고장신고</a></button>
+    </div>
+    <img src="/images/product/healingme_modal_image.png" alt="4) 힐링미 안마의자">
+</div>
 
 <script>
-    // 모달 및 버튼 선택
-    const modal = document.getElementById('modal');
-    const modalBtn = document.getElementById('modalBtn');
+    // 모든 + 버튼에 이벤트 리스너 추가
+	const modals = document.querySelectorAll('.modal');
+	const modalBtns = document.querySelectorAll('.plus-button');
 
-    // 모달 열기 (모달 위치를 버튼 위치에 맞추기)
-    modalBtn.addEventListener('click', function() {
-        const btnRect = modalBtn.getBoundingClientRect();
-        modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
-        modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
-        // 모달 열기
-        document.getElementById("modal").style.display = "flex";
-        // + 버튼에 active 클래스 추가하여 색상과 크기 유지
-       modalBtn.classList.add('active');
-    });
+	// 모든 모달 기본 숨김 설정
+	modals.forEach(modal => {
+		modal.style.display = 'none'; // 기본적으로 숨김 처리
+	});
+
+	modalBtns.forEach((btn, index) => {
+		btn.addEventListener('click', function() {
+			// 모든 모달 창을 닫기
+			modals.forEach(modal => modal.style.display = 'none');
+
+			// 해당 버튼의 모달 열기
+			const modal = document.getElementById(`modal${index + 1}`);
+			const btnRect = btn.getBoundingClientRect();
+			modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
+			modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
+			modal.style.display = "flex";
+
+			// 클릭된 버튼에 active 클래스 추가 및 다른 버튼 축소
+			modalBtns.forEach((b) => {
+				if (b !== btn) {
+					b.classList.remove('active');
+					b.classList.add('shrink'); // 나머지 버튼은 축소
+				} else {
+					b.classList.remove('shrink'); // 클릭된 버튼은 축소되지 않음
+					b.classList.add('active'); // 클릭된 버튼 확대
+				}
+			});
+		});
+	});
 
     // 모달 외부 클릭 시 닫기
     window.addEventListener('click', function(event) {
-        if (event.target !== modal && !modal.contains(event.target) && event.target !== modalBtn) {
-                // 모달 닫기
-                document.getElementById("modal").style.display = "none";
-                // + 버튼에서 active 클래스 제거하여 원래 상태로 되돌리기
-                modalBtn.classList.remove('active');
-        }
+        modals.forEach(modal => {
+            if (!modal.contains(event.target) && !Array.from(modalBtns).includes(event.target)) {
+                modal.style.display = "none";
+                modalBtns.forEach((b) => {
+                    b.classList.remove('active');
+                    b.classList.remove('shrink'); // 버튼이 원래 크기로 돌아오도록
+                });
+            }
+        });
     });
 </script>
 

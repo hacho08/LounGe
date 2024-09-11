@@ -8,86 +8,106 @@
     <link rel="stylesheet" href="/css/reservation.css">
 </head>
 <body>
-<div class="container">
-    <!-- Header -->
-    <header>
+
+<!-- Header -->
+<div class="header">
+    <div class="header-left">
         <div class="logo">
-            <img src="/images/icon/logo icon.png" alt="LounGe Logo" class="logo-img">
+            <img src="/images/icon/logo icon.png" alt="LounGe Logo">
         </div>
-        <div class="header-actions">
-            <button>리뷰</button>
-            <button>로그인</button>
+    </div>
+    <div class="header-right">
+        <button class="review-btn">
+            <img src="/images/icon/icon_write.png" alt="Review Icon">
+            리뷰
+        </button>
+        <button class="login-btn">
+            <img src="/images/icon/icon_person.png" alt="Login Icon">
+            로그인
+        </button>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <!-- Product Section -->
+    <div class="product-box">
+        <h3>스타일러</h3>
+        <img src="/images/reservation/styler/res_styler_front.png" alt="Product Image">
+    </div>
+
+    <!-- Reservation Section (캘린더와 타임슬롯) -->
+    <div class="reservation-section">
+        <!-- Calendar Section -->
+        <div class="calendar-section">
+            <span class="reservation-date-title">
+                <img src="/images/icon/icon_calendar.png" alt="Calendar Icon" class="icon">
+                예약 날짜
+            </span>
+            <div id="datePicker"></div> <!-- Flatpickr 달력 -->
+
+            <div class="reservation-info">
+                예약: <span id="selected-date">날짜 선택</span>, <span id="selected-time">시간 선택</span> (<span id="selected-duration">시간 선택</span> 이용)
+            </div>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Product Image Section -->
-        <div class="product-box">
-            <div class="product-image">
-                <span class="product-name">스타일러</span>
-                <img src="/images/reservation/styler/res_styler_front.png" alt="Product Image">
-            </div>
-            <!-- Image Dots -->
-            <div class="image-dots">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-
-        <!-- Reservation Section -->
-        <div class="reservation-section">
-            <!-- Calendar Header -->
-            <div class="calendar-header">
-                <div class="calendar-title">
-                    <img src="/images/icon/icon_calendar.png" alt="Calendar Icon" class="calendar-icon">
-                    <span class="reservation-title">예약</span>
+        <!-- Time Slots Section -->
+        <div class="reservation-time-section">
+            <h3 class="reservation-time-title">
+                <span>
+                    <img src="/images/icon/icon_clock.png" alt="Calendar Icon" class="icon">
+                    예약 시작시간
+                </span>
+                <span class="max-times-info">최대 2타임까지 예약 가능</span>
+            </h3>
+            <div class="time-slot-selector">
+                <div class="time-slot-group">
+                    <button class="time-slot-tab active" data-target="morning">오전</button>
+                    <button class="time-slot-tab" data-target="afternoon">오후</button>
                 </div>
-            </div>
 
-            <!-- Calendar (Flatpickr 적용) -->
-            <div class="calendar-section">
-                <div id="datePicker"></div> <!-- 화면에 달력을 바로 표시 -->
-            </div>
-
-            <!-- Time Slots and Instruction -->
-            <div class="time-info">
-                <div class="time-guide-left">
-                    하루에 최대 2타임까지 예약 가능
+                <!-- 오전 타임 슬롯 -->
+                <div class="time-slots morning active">
+                    <div class="slot" data-time="12:00">12:00</div>
+                    <div class="slot" data-time="1:00">1:00</div>
+                    <div class="slot" data-time="2:00">2:00</div>
+                    <div class="slot" data-time="3:00">3:00</div>
+                    <div class="slot" data-time="4:00">4:00</div>
+                    <div class="slot" data-time="5:00">5:00</div>
+                    <div class="slot" data-time="6:00">6:00</div>
+                    <div class="slot" data-time="7:00">7:00</div>
+                    <div class="slot" data-time="8:00">8:00</div>
+                    <div class="slot" data-time="9:00">9:00</div>
+                    <div class="slot" data-time="10:00">10:00</div>
+                    <div class="slot" data-time="11:00">11:00</div>
                 </div>
-                <div class="legend-section">
-                    <span class="legend available"></span> 예약 가능
-                    <span class="legend closed"></span> 마감
-                </div>
-            </div>
 
-            <!-- Time Slots -->
-            <div class="calendar_time_selector">
-                <div class="time_slots_container">
-                    <ul class="time_slots">
-                        <span class="time_label morning">오전</span>
-                        <li class="time_slot available">12시</li>
-                        <li class="time_slot available">1시</li>
-                        <li class="time_slot available">2시</li>
-                        <li class="time_slot available">3시</li>
-                        <li class="time_slot available">4시</li>
-                        <li class="time_slot available">5시</li>
-                        <li class="time_slot available">6시</li>
-                        <li class="time_slot closed">7시</li>
-                        <li class="time_slot closed">8시</li>
-                        <li class="time_slot closed">9시</li>
-                        <li class="time_slot closed">10시</li>
-                        <li class="time_slot closed">11시</li>
-                        <span class="time_label afternoon">오후</span>
-                    </ul>
+                <!-- 오후 타임 슬롯 -->
+                <div class="time-slots afternoon">
+                    <div class="slot" data-time="12:00">12:00</div>
+                    <div class="slot" data-time="1:00">1:00</div>
+                    <div class="slot" data-time="2:00">2:00</div>
+                    <div class="slot" data-time="3:00">3:00</div>
+                    <div class="slot" data-time="4:00">4:00</div>
+                    <div class="slot" data-time="5:00">5:00</div>
+                    <div class="slot" data-time="6:00">6:00</div>
+                    <div class="slot" data-time="7:00">7:00</div>
+                    <div class="slot" data-time="8:00">8:00</div>
+                    <div class="slot" data-time="9:00">9:00</div>
+                    <div class="slot" data-time="10:00">10:00</div>
+                    <div class="slot" data-time="11:00">11:00</div>
                 </div>
-            </div>
 
-            <!-- Reservation Button -->
-            <div class="reservation-button-container">
-                <button class="reservation-button">예약하기</button>
+                <!-- 1시간 이용 | 2시간 이용 buttons -->
+                <div class="usage-duration">
+                    <button class="usage-button">1시간 이용</button>
+                    <button class="usage-button">2시간 이용</button>
+                </div>
+
+                <!-- Reservation Button -->
+                <div class="reservation-button-container">
+                    <button class="reservation-button">예약하기</button>
+                </div>
             </div>
         </div>
     </div>
@@ -99,10 +119,50 @@
     flatpickr("#datePicker", {
         inline: true,  // 화면에 달력을 바로 표시
         dateFormat: "Y-m-d",
-        onChange: function(selectedDates, dateStr, instance) {
-            // 날짜 선택 시 타임테이블 업데이트
-            console.log("선택된 날짜: ", dateStr);
-        }
+        prevArrow: "",  // 왼쪽 꺾쇠 없애기
+        nextArrow: "",  // 오른쪽 꺾쇠 없애기
+    });
+</script>
+
+<script>
+    // 탭 전환 기능
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.time-slot-tab');
+        const timeSlots = document.querySelectorAll('.time-slots');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                // 모든 탭에서 active 클래스 제거
+                tabs.forEach(t => t.classList.remove('active'));
+                // 클릭된 탭에만 active 클래스 추가
+                this.classList.add('active');
+
+                // 모든 타임 슬롯 섹션 숨기기
+                timeSlots.forEach(section => section.classList.remove('active'));
+
+                // 클릭된 탭에 해당하는 타임 슬롯 섹션 보이기
+                const target = this.getAttribute('data-target');
+                document.querySelector(`.${target}`).classList.add('active');
+            });
+        });
+
+        // 타임 슬롯 선택
+        const slots = document.querySelectorAll('.slot');
+        slots.forEach(slot => {
+            slot.addEventListener('click', function () {
+                slots.forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Usage duration button toggle
+        const usageButtons = document.querySelectorAll('.usage-button');
+        usageButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                usageButtons.forEach(b => b.classList.remove('active'));  // Remove active class from all buttons
+                this.classList.add('active');  // Add active class to clicked button
+            });
+        });
     });
 </script>
 
