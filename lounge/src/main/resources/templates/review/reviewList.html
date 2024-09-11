@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>리뷰 보기</title>
+
+    <link rel="stylesheet" th:href="@{/css/reviewList.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+<th:block th:replace="layout/fragments/header :: headerLayout"></th:block>
+    <div class="review-container">
+        <h1>리뷰</h1>
+        <div class="filter-container">
+            <!-- 카테고리 필터 -->
+            <div class="category-filter">
+                <button class="category active">스타일러</button>
+                <button class="category">힐링미</button>
+                <button class="category">퓨리케어</button>
+                <button class="category">퓨리케어</button>
+            </div>
+
+            <!-- 검색 필터 -->
+            <div class="search-filter">
+                <input type="text" placeholder="궁금한 내용을 검색해 보세요." />
+            </div>
+        </div>
+        <!-- 리뷰 목록 -->
+        <div class="review-list">
+            <div class="review-item">
+                <div class="review-header">
+                    <div class="user-info">
+                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘">
+                        <div class="user-details">
+                            <p>익명</p>
+                            <p>2024-09-14</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    이 공간 개좋음 친구들이랑 편하게 수다 떨기 딱 좋음 다음 공강 때도 친구들이랑 여기 오기로 했음 생각보다 훨씬 아늑함
+                </div>
+                <div class="review-footer">
+                    <span><img src="images/icon/icon_thumbsup.png" alt="좋아요"> 14</span>
+                </div>
+            </div>
+
+            <div class="review-item">
+                <div class="review-header">
+                    <div class="user-info">
+                        <img src="images/icon/icon_person_white.png" alt="사용자 아이콘">
+                        <div class="user-details">
+                            <p>익명</p>
+                            <p>2024-09-14</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-content">
+                    라운지 생기니까 개좋아! 과제도 하고 잠깐 잠도 잘 수 있는데 콘텐츠가 많아서 지루할 틈 없음 ㅋㅋ
+                </div>
+                <div class="review-footer">
+                    <span><img src="images/icon/icon_thumbsup.png" alt="좋아요"> 10</span>
+                </div>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+            </div>
+        </div>
+    </div>
+    <div class="review-container">
+        <table class="review-table">
+            <tr>
+                <td class="review-item">
+                    <div class="review-header">
+                        <div class="user-info">
+                            <img src="images/icon/icon_person_white.png" alt="사용자 아이콘">
+                            <div class="user-details">
+                                <p>익명</p>
+                                <p>2024-09-14</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        라운지 생기니까 개좋아! 과제도 하고 잠깐 잠도 잘 수 있는데 콘텐츠가 많아서 지루할 틈 없음 ㅋㅋ
+                    </div>
+                    <div class="review-footer">
+                        <span><img src="images/icon/icon_thumbsup.png" class="like" alt="좋아요"> 10</span>
+                    </div>
+                </td>
+                <td class="review-item">리뷰 2</td>
+            </tr>
+            <tr>
+                <td class="review-item">리뷰 3</td>
+                <td class="review-item">리뷰 4</td>
+            </tr>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
