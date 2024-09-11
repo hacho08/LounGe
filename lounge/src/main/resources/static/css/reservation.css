@@ -1,114 +1,172 @@
-* {
+/* Pretendard Variable 폰트 적용 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/PretendardVariable.ttf') format('truetype');
+    font-weight: 100 900; /* 가변 폰트이므로 다양한 굵기 지원 */
+    font-style: normal;
+}
+
+/* 전체 레이아웃 설정 */
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%;
+    font-family: 'Pretendard', Arial, sans-serif;
     box-sizing: border-box;
+    background-color: #fbfbfb;
+    position: relative; /* 전체 페이지에 대해 상대적 위치 지정 */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-}
-
+/* 컨테이너 레이아웃 */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.logo-img {
-    width: 40px;
-    margin-right: 10px;
-}
-
-.header-actions button {
-    background-color: #f3f3f3;
-    border: none;
-    padding: 8px 16px;
-    margin-left: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.main-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
+    gap: 100px; /* 요소 간 간격을 적절하게 조정 */
+    position: relative; /* Reservation button을 절대 위치로 배치하기 위한 설정 */
 }
 
-.product-box, .calendar-section, .time-slots-section {
-    flex: 1; /* 화면에서 각각 1/3을 차지하게 함 */
-    max-width: 33%;
-}
-
-/* 제품 박스 */
-.product-box {
+/* Header 스타일링 */
+.header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    background-color: white;
     padding: 20px;
+    background-color: white;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right button {
+    background: none;
+    border: 1px solid #D9D9D9;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.header-right button img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+.header-right button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Product 섹션 스타일 */
+.product-box {
+    width: 240px;  /* 기존 220px에서 280px으로 키움 */
+    background-color: white;
+    padding: 20px;  /* 패딩을 조금 더 넓게 */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-shrink: 0;
 }
 
-.product-name {
-    text-align: left;
-    width: 100%;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
+.product-box h3 {
+    text-align: left; /* 텍스트를 왼쪽으로 정렬 */
 }
 
-.product-image img {
+.product-box img {
     width: 100%;
     border-radius: 10px;
 }
 
-.image-dots {
-    margin-top: 10px;
-    text-align: center;
+.icon {
+    width: 20px;  /* 아이콘 너비 */
+    height: 20px; /* 아이콘 높이 */
+    vertical-align: middle; /* 텍스트와 수직 정렬 */
 }
 
-.dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 4px;
-}
-
-.dot.active {
-    background-color: orange;
-}
-
-/* 캘린더와 시간 슬롯 섹션 */
-.calendar-time-container {
+.icon-text {
     display: flex;
-    gap: 20px;
-    flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
+    gap: 20px;  /* 아이콘과 텍스트 사이 간격 */
 }
 
-/* Flatpickr 캘린더 스타일 */
+/* reservation-section을 예약 날짜와 예약 시작시간을 가로로 배치하도록 설정 */
+.reservation-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 40px; /* 캘린더와 예약 시작 시간 섹션 사이의 간격 추가 */
+}
+
+/* 캘린더 섹션 */
+.calendar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;  /* Adjust width to make it more compact */
+    margin-bottom: 10px;
+    flex: 1;
+}
+
+.reservation-date-title,
+.reservation-time-title {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;  /* 아이콘과 텍스트 사이 간격 */
+    margin-bottom: 10px; /* Add some margin to control positioning */
+}
+
+.reservation-date-title .icon {
+    width: 20px;  /* 아이콘 크기 설정 */
+    height: 20px;  /* 아이콘 크기 설정 */
+    vertical-align: middle; /* 아이콘의 수직 정렬 */
+}
+
+.reservation-time-title {
+    display: flex;
+    align-items: center;  /* 세로로 중앙 정렬 */
+    justify-content: space-between;  /* 텍스트와 아이콘을 양 끝에 배치 */
+    width: 100%;  /* 요소가 가로로 가득 채워지도록 설정 */
+}
+
+.reservation-time-title {
+    display: flex;
+    align-items: center;  /* 아이콘과 텍스트를 수직 중앙으로 정렬 */
+    gap: 5px;  /* 아이콘과 텍스트 사이의 간격 */
+}
+
+.max-times-info {
+    font-size: 12px; /* Make the text smaller */
+    color: #a0a0a0;  /* Make the text grey */
+    font-weight: normal;  /* Adjust font weight if needed */
+}
+
+/* Flatpickr 스타일 */
 .flatpickr-calendar {
-    font-size: 14px;
-    width: 100%; /* 캘린더가 주어진 공간을 가득 채우도록 */
+    width: 300px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 .flatpickr-day.today {
@@ -128,47 +186,129 @@ header {
     cursor: not-allowed;
 }
 
-/* 시간 슬롯 스타일 */
-.time-slots-section {
+/* 예약 시간 섹션 */
+.reservation-time-section {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    justify-content: center;
+    align-items: flex-start;
+    width: 100%; /* 가로 너비를 맞춰줌 */
+    flex: 1;
 }
 
-.time_slots {
-    list-style: none;
-    padding: 0;
+.reservation-time-title {
     display: flex;
-    gap: 5px;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.time_slot {
-    background-color: #e0ffe0;
-    padding: 10px 15px;
+/* 예약 시간 테이블 */
+.time-slot-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* 예약 시작 시간 버튼 섹션 */
+.time-slot-group {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽으로 정렬 */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.time-slot-tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center;
-    min-width: 60px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    flex: 1;
 }
 
-.time_slot.closed {
+.time-slot-tab.active {
     background-color: #f0f0f0;
-    cursor: not-allowed;
+    border-color: #000;
 }
 
-.time_label {
-    font-weight: bold;
-    margin-bottom: 5px;
+.time-slots {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.time-slots.active {
+    display: grid;
+}
+
+.slot {
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 5px;
     text-align: center;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
+.slot:hover {
+    background-color: #ffeeba;
+}
+
+.slot.selected {
+    background-color: #ffc107;
+    border: 2px solid #ffc107;
+    color: white;
+}
+
+/* 예약 시간 이용 버튼 섹션 */
+.usage-duration {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.usage-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 14px;
+    color: #333;
+}
+
+.usage-button.active {
+    background-color: #ffc107;
+    color: white;
+    border-color: #ffc107;
+}
+
+.usage-button:hover {
+    background-color: #ffeeba;
+}
+
+/* 예약 일시 나타내기 */
+.reservation-info {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+}
+
+/* 예약 버튼 */
 .reservation-button-container {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 30px;
+    justify-content: flex-end; /* 오른쪽으로 정렬 */
+    margin-top: 20px;
+    width: 100%; /* 부모 요소의 너비를 100%로 설정 */
 }
 
 .reservation-button {
@@ -177,6 +317,11 @@ header {
     color: white;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-button:hover {
+    background-color: #777;
 }
