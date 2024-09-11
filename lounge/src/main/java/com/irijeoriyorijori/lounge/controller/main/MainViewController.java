@@ -22,14 +22,9 @@ public class MainViewController {
         return "reviewList";
     }
 
-    @GetMapping("/reservation/complete")
-    public String reservationComplete(Model model) {
-        // 예약 완료 화면으로 이동
-        return "reservation/reservationComplete";
-    }
-
     @GetMapping("test")
     public String test() {
         return "layout/layout";
     }
+
 }
