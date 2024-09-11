@@ -293,6 +293,10 @@
             z-index: 1000;
             border-radius: 15px;
             width: 300px;
+            width: 420px; /* 모달의 너비를 넓혀 이미지와 텍스트 공간 확보 */
+            display: flex; /* 이미지와 내용을 나란히 배치 */
+            justify-content: space-between; /* 이미지와 텍스트 사이 간격 */
+            align-items: center; /* 수직 가운데 정렬 */
         }
 
         .modal img {
@@ -307,9 +311,9 @@
         }
 
 
-        .modal.active {
-            display: block;
-        }
+<!--        .modal.active {-->
+<!--            display: block;-->
+<!--        }-->
 
         .modal h2 {
             margin-bottom: 20px;
@@ -350,7 +354,39 @@
             color: #4E5968;
         }
 
+        a {
+            color: inherit; /* 텍스트 색상을 부모 요소의 색상으로 상속 */
+            text-decoration: none; /* 밑줄 제거 */
+        }
 
+        a:hover {
+            color: #007BFF; /* 링크에 마우스를 올렸을 때의 색상 (선택 사항) */
+            text-decoration: none; /* 마우스를 올렸을 때도 밑줄 제거 */
+        }
+
+        /* 호버 시 버튼이 커지고 배경색 및 글자 색상이 변경되는 효과 */
+        .plus-button:hover {
+            transform: scale(1.2);
+            background-color: #fff; /* 배경색 변경 */
+            color: #FF9C52; /* + 글자 색 변경 */
+        }
+        /* 클릭 후 active 상태 스타일 (호버된 상태 유지) */
+        .plus-button.active {
+            transform: scale(1.2); /* 크기 확대 유지 */
+            background-color: #fff; /* 배경색 유지 */
+            color: #FF9C52; /* 글자 색 유지 */
+        }
+
+        /* 텍스트 스타일 */
+        .lounge-name {
+            position: absolute;
+            top: -26px; /* 텍스트 위치 (위에서 10px) */
+            left: 8%; /* 가운데 정렬 */
+            transform: translateX(-50%);
+            font-size: 17px;
+            font-weight: bold;
+            color: #333;
+        }
 
 
 
@@ -430,6 +466,9 @@
         <!-- 메인 3D 공간 -->
         <div class="main">
             <div class="three-d-space">
+                <!-- 홍익대 라운지 텍스트 -->
+                <div class="lounge-name">ㅇㅇ대 라운지</div>
+
                 <!-- + 버튼 -->
                 <div class="plus-button" id="modalBtn">+</div>
             </div>
@@ -470,13 +509,19 @@
         const btnRect = modalBtn.getBoundingClientRect();
         modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
         modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
-        modal.classList.add('active');
+        // 모달 열기
+        document.getElementById("modal").style.display = "flex";
+        // + 버튼에 active 클래스 추가하여 색상과 크기 유지
+       modalBtn.classList.add('active');
     });
 
     // 모달 외부 클릭 시 닫기
     window.addEventListener('click', function(event) {
         if (event.target !== modal && !modal.contains(event.target) && event.target !== modalBtn) {
-            modal.classList.remove('active');
+                // 모달 닫기
+                document.getElementById("modal").style.display = "none";
+                // + 버튼에서 active 클래스 제거하여 원래 상태로 되돌리기
+                modalBtn.classList.remove('active');
         }
     });
 </script>
