@@ -39,6 +39,7 @@ body, html {
     gap: 20px;
 }
 
+
 /* 리뷰와 로그인 버튼 스타일 */
 .header button {
     display: flex;
@@ -48,11 +49,13 @@ body, html {
     background-color: #fff;
     cursor: pointer;
 }
+
 /* 버튼 안의 이미지 스타일 */
 .header button img {
     width: 20px; /* 아이콘 크기 */
     height: 20px;
     margin-right: 8px; /* 이미지와 텍스트 간 간격 */
+
 }
 .header button:hover {
     background-color: #eee;
@@ -80,6 +83,7 @@ body, html {
     margin-bottom: 20px;
     padding-left : 35px;
 }
+
 .whats-new-title {
     display: flex;
     justify-content: space-between;
@@ -107,12 +111,14 @@ li {
     font-size: 16px;
 }
 
+
 /* 실시간 공간 상태 */
 .real-time-status {
     background-color: #fff;
     padding: 20px;
     padding-left : 35px;
 }
+
 .real-time-status h2 {
     font-size: 18px;
     font-weight: bold;
@@ -120,6 +126,7 @@ li {
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
+
 
 /* 실시간 공간 상태 - 어서와요 섹션 */
 .welcome-section h3 {
@@ -132,6 +139,7 @@ li {
     font-size: 14px;
     color: #555;
 }
+
 /* 온도/습도 이미지 크기 제한 */
 .status-section img {
     width: 100%;      /* 부모 요소에 맞게 이미지를 늘릴 수 있도록 */
@@ -156,6 +164,7 @@ li {
     background-color: #b3e5fc;
     border-radius: 5px;
 }
+
 /* 메인 3D 공간 */
 .main {
     flex: 1;
@@ -165,6 +174,7 @@ li {
     align-items: center;
     position: relative;
 }
+
 .three-d-space {
     width: 700px;
     height: 560px;
@@ -177,6 +187,7 @@ li {
     align-items: center;
     position: relative;
 }
+
 /* + 버튼 스타일 */
 .plus-button {
     width: 50px;
@@ -220,6 +231,7 @@ li {
 }
 
 
+
 /* 모달 */
 .modal {
     display: none;
@@ -243,6 +255,7 @@ li {
     flex-direction: column;
     gap: 10px;
 }
+
 .modal h2 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -264,6 +277,7 @@ li {
     background-color: #EEEEEE;
     color: #4E5968;
 }
+
 /* 텍스트 스타일 */
 .lounge-name {
     position: absolute;
@@ -280,3 +294,4 @@ a {
 a:hover {
     color: #007BFF;
 }
+
