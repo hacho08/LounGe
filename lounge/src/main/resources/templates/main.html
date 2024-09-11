@@ -4,357 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/main.css">
     <title>LounGe - Product Booking</title>
 
-    <style>
-        /* Pretendard Variable 폰트 적용 */
-        @font-face {
-            font-family: 'Pretendard';
-            src: url('/fonts/PretendardVariable.ttf') format('truetype');
-            font-weight: 100 900; /* 가변 폰트이므로 다양한 굵기 지원 */
-            font-style: normal;
-        }
-
-        /* 전체 레이아웃 설정 */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: 'Pretendard', Arial, sans-serif; /* Pretendard 폰트 적용 */
-            box-sizing: border-box;
-            background-color: #f4f4f4; /* 배경색 */
-        }
-
-        /* 페이지를 상단(헤더)과 하단(콘텐츠 영역)으로 나누기 */
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            padding: 20px;
-        }
-
-        /* 상단 영역 (헤더) */
-        .header {
-            background-color: #f8f8f8;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .header .logo img {
-            width: 150px;
-        }
-
-        .header .nav-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        /* 리뷰와 로그인 버튼 스타일 */
-        .header button {
-            display: flex;
-            align-items: center; /* 텍스트와 이미지를 수직으로 가운데 정렬 */
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            cursor: pointer;
-        }
-
-        /* 버튼 안의 이미지 스타일 */
-        .header button img {
-            width: 20px; /* 아이콘 크기 */
-            height: 20px;
-            margin-right: 8px; /* 이미지와 텍스트 간 간격 */
-        }
-
-        .header button:hover {
-            background-color: #eee;
-        }
-
-        /* 하단 영역 (사이드바 + 메인 컨텐츠) */
-        .content {
-            display: flex;
-            flex: 1;
-            justify-content: center; /* 중앙 정렬 */
-            align-items: center; /* 수직 중앙 정렬 */
-        }
-
-        /* 사이드바 설정 */
-        .sidebar {
-            width: 25%;
-            background-color: #ffffff; /* 흰색 배경 */
-            padding: 20px;
-            border-radius: 10px; /* 모서리를 둥글게 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
-            border: 1px solid #ddd; /* 옅은 테두리 */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* What's New 영역 */
-        .whats-new {
-            margin-bottom: 20px;
-        }
-
-        /* What's New 타이틀 스타일 */
-        .whats-new-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-
-        .whats-new-title h2 {
-            font-size: 18px;
-            color: #E92662; /* 빨간색 */
-            font-weight: bold;
-        }
-
-        .whats-new-title .plus-icon {
-            font-size: 24px;
-            color: #aaa;
-            cursor: pointer;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-
-
-
-
-        /* 실시간 공간 상태 */
-        .real-time-status {
-            background-color: #fff;
-            padding: 20px;
-        }
-
-        /* 실시간 공간 상태 타이틀과 선 추가 */
-        .real-time-status h2 {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        /* 실시간 공간 상태 - 어서와요 섹션 */
-        .welcome-section h3 {
-            font-size: 20px;
-            color: #E92662;
-            margin-bottom: 3px;
-            font-weight: 900;
-        }
-
-        .welcome-section p {
-            font-size: 14px;
-            color: #555;
-        }
-
-        /* 실시간 공간 상태 - 하위 섹션 스타일 */
-        .status-section {
-            margin-bottom: 15px;
-        }
-
-        .status-section h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #191F28;
-        }
-
-        .status-section p {
-            font-size: 14px;
-            margin: 0;
-        }
-
-        /* 온도/습도 섹션 */
-        .temperature-humidity {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .temperature-humidity .icon {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .status-section img {
-            width: 100%
-            max-width: 100px;
-            height: auto;
-        }
-
-        /* 공기 청정도 도표 */
-        .air-quality {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .air-quality-bar {
-            width: 100%;
-            height: 20px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            position: relative;
-        }
-
-        .air-quality-fill {
-            width: 86%; /* 공기 청정도 조절 */
-            height: 100%;
-            background-color: #b3e5fc;
-            border-radius: 5px;
-        }
-
-        .air-quality-label {
-            font-size: 14px;
-            color: #333;
-        }
-
-        /* 메인 3D 공간 */
-        .main {
-            flex: 1;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        /* 3D 공간에 이미지 배경 설정 */
-        .three-d-space {
-            width: 600px;
-            height: 480px;
-            background-image: url('/images/main/main_lounge.png');
-            background-size: cover;
-            background-position: center;
-            border: 1px solid #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            color: white;
-        }
-
-        /* + 버튼 스타일 */
-        .plus-button {
-            width: 50px;
-            height: 50px;
-            background-color: #FFC193;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            font-weight: 900;
-            color: white;
-            cursor: pointer;
-            position: absolute;
-            top: 150px;
-            left: 500px;
-            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* 호버 시 버튼이 커지고 배경색 및 글자 색상이 변경되는 효과 */
-        .plus-button:hover {
-            transform: scale(1.2);
-            background-color: #fff; /* 배경색 변경 */
-            color: #FF9C52; /* + 글자 색 변경 */
-        }
-
-
-
-
-
-
-        /* 모달 기본 스타일 */
-        .modal {
-            display: none;
-            position: absolute;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            border-radius: 15px;
-            width: 300px;
-        }
-
-        .modal img {
-            width: 250px; /* 이미지 크기 */
-            border-radius: 10px;
-        }
-
-        .modal-content {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-
-        .modal.active {
-            display: block;
-        }
-
-        .modal h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #191F28;
-        }
-
-        .modal-content button {
-            padding: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .reservation-btn {
-            padding: 15px 30px;
-            width: 180px; /* 버튼 너비 */
-            font-size: 18px;
-            font-weight: 900;
-            cursor: pointer;
-            border: none;
-            border-radius: 10px;
-            text-align: center;
-            background-color: #FF9C52;
-            color: white;
-        }
-
-        .report-btn {
-            padding: 15px 30px;
-            width: 180px; /* 버튼 너비 */
-            font-size: 18px;
-            font-weight: 900;
-            cursor: pointer;
-            border: none;
-            border-radius: 10px;
-            text-align: center;
-            background-color: #EEEEEE;
-            color: #4E5968;
-        }
-
-
-
-
-
-    </style>
 </head>
 <body>
 
@@ -426,9 +78,16 @@
             </div>
         </div>
 
+
+
+
+
         <!-- 메인 3D 공간 -->
         <div class="main">
             <div class="three-d-space">
+                <!-- 홍익대 라운지 텍스트 -->
+                <div class="lounge-name">홍익대 라운지</div>
+
                 <!-- + 버튼 -->
                 <div class="plus-button" id="modalBtn">+</div>
             </div>
@@ -460,23 +119,29 @@
 
 <script>
     // 모달 및 버튼 선택
-    const modal = document.getElementById('modal');
-    const modalBtn = document.getElementById('modalBtn');
+	const modal = document.getElementById('modal');
+	const modalBtn = document.getElementById('modalBtn');
 
-    // 모달 열기 (모달 위치를 버튼 위치에 맞추기)
-    modalBtn.addEventListener('click', function() {
-        const btnRect = modalBtn.getBoundingClientRect();
-        modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
-        modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
-        modal.classList.add('active');
-    });
+	// 모달 열기 (모달 위치를 버튼 위치에 맞추기)
+	modalBtn.addEventListener('click', function() {
+		const btnRect = modalBtn.getBoundingClientRect();
+		modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
+		modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
+<!--		modal.classList.add('active');-->
 
-    // 모달 외부 클릭 시 닫기
-    window.addEventListener('click', function(event) {
-        if (event.target !== modal && !modal.contains(event.target) && event.target !== modalBtn) {
-            modal.classList.remove('active');
-        }
-    });
+		// + 버튼에 active 클래스 추가하여 색상과 크기 유지
+		modalBtn.classList.add('active');
+	});
+
+	// 모달 외부 클릭 시 닫기
+	window.addEventListener('click', function(event) {
+		if (event.target !== modal && !modal.contains(event.target) && event.target !== modalBtn) {
+			modal.classList.remove('active');
+
+			// + 버튼에서 active 클래스 제거하여 원래 상태로 되돌리기
+			modalBtn.classList.remove('active');
+		}
+	});
 </script>
 
 </body>
