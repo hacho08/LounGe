@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="/css/reservation.css">
 </head>
 <body>
@@ -44,54 +45,11 @@
                     <img src="/images/icon/icon_calendar.png" alt="Calendar Icon" class="calendar-icon">
                     <span class="reservation-title">예약</span>
                 </div>
-                <div class="month-select">
-                    <span class="prev-month">&lt;</span>
-                    <span>9월</span>
-                    <span class="next-month">&gt;</span>
-                </div>
             </div>
 
-            <!-- Calendar -->
-            <div class="calendar">
-                <div class="weekdays">
-                    <span>일</span>
-                    <span>월</span>
-                    <span>화</span>
-                    <span>수</span>
-                    <span>목</span>
-                    <span>금</span>
-                    <span>토</span>
-                </div>
-                <div class="days">
-                    <span class="disabled">27</span>
-                    <span class="disabled">28</span>
-                    <span>1</span>
-                    <span>2</span>
-                    <span>3</span>
-                    <span>4</span>
-                    <span>5</span>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                    <span>10</span>
-                    <span>11</span>
-                    <span>12</span>
-                    <span>13</span>
-                    <span>14</span>
-                    <span>15</span>
-                    <span>16</span>
-                    <span>17</span>
-                    <span class="today">18</span>
-                    <span>19</span>
-                    <span>20</span>
-                    <span>21</span>
-                    <span>22</span>
-                    <span>23</span>
-                    <span>24</span>
-                    <span>25</span>
-                    <span>26</span>
-                </div>
+            <!-- Calendar (Flatpickr 적용) -->
+            <div class="calendar-section">
+                <div id="datePicker"></div> <!-- 화면에 달력을 바로 표시 -->
             </div>
 
             <!-- Time Slots and Instruction -->
@@ -109,6 +67,7 @@
             <div class="calendar_time_selector">
                 <div class="time_slots_container">
                     <ul class="time_slots">
+                        <span class="time_label morning">오전</span>
                         <li class="time_slot available">12시</li>
                         <li class="time_slot available">1시</li>
                         <li class="time_slot available">2시</li>
@@ -121,6 +80,7 @@
                         <li class="time_slot closed">9시</li>
                         <li class="time_slot closed">10시</li>
                         <li class="time_slot closed">11시</li>
+                        <span class="time_label afternoon">오후</span>
                     </ul>
                 </div>
             </div>
@@ -132,5 +92,19 @@
         </div>
     </div>
 </div>
+
+<!-- Flatpickr 적용 스크립트 -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    flatpickr("#datePicker", {
+        inline: true,  // 화면에 달력을 바로 표시
+        dateFormat: "Y-m-d",
+        onChange: function(selectedDates, dateStr, instance) {
+            // 날짜 선택 시 타임테이블 업데이트
+            console.log("선택된 날짜: ", dateStr);
+        }
+    });
+</script>
+
 </body>
 </html>
