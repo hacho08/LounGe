@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LounGe - Product Booking</title>
-
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-
-
+    <title>LounGe - Product Booking</title>
 </head>
 <body>
-<th:block th:replace="layout/fragments/header :: headerLayout"></th:block>
 <div class="container">
+    <!-- 상단 헤더 영역 -->
+    <div class="header">
+        <div class="logo">
+            <img src="/images/icon/logo icon.png" alt="LounGe Logo">
+        </div>
+        <div class="nav-buttons">
+            <!-- 리뷰 버튼 -->
+            <button>
+                <img src="/images/icon/icon_write.png" alt="리뷰 아이콘">
+                리뷰
+            </button>
+            <button>
+                <!-- 로그인 버튼 -->
+                <a href="/login">
+                    <img src="/images/icon/icon_person.png" alt="로그인 아이콘">
+                    로그인
+                </a>
+            </button>
+        </div>
+    </div>
     <!-- 하단 영역 (사이드바 + 메인 컨텐츠) -->
     <div class="content">
         <div class="sidebar">
@@ -31,7 +46,6 @@
                     <li>- LounGe 서비스 런칭 이벤트! 와!</li>
                 </ul>
             </div>
-
             <!-- 실시간 공간 상태 섹션 -->
             <div class="real-time-status">
                 <h2>실시간 공간 상태</h2>
@@ -53,13 +67,11 @@
                 </div>
             </div>
         </div>
-
         <!-- 메인 3D 공간 -->
         <div class="main">
             <div class="three-d-space">
                 <!-- 홍익대 라운지 텍스트 -->
                 <div class="lounge-name">럭키골드대학교 라운지</div>
-
                 <!-- 4개의 + 버튼 추가 -->
                 <div class="plus-button" id="modalBtn1" style="top: 260px; left: 330px;">+</div>
                 <div class="plus-button" id="modalBtn2" style="top: 160px; left: 430px;">+</div>
@@ -69,7 +81,6 @@
         </div>
     </div>
 </div>
-
 <!-- 각 버튼에 맞는 모달 창들 -->
 <div class="modal" id="modal1">
     <div class="modal-content">
@@ -79,7 +90,6 @@
     </div>
     <img src="/images/product/styler_modal_image.png" alt="1)스타일러">
 </div>
-
 <div class="modal" id="modal2">
     <div class="modal-content">
         <h2>Shoe Dresser</h2>
@@ -88,7 +98,6 @@
     </div>
     <img src="/images/product/shoedresser_modal_image.png" alt="2)슈드레서">
 </div>
-
 <div class="modal" id="modal3">
     <div class="modal-content">
         <h2>수면 케어룸</h2>
@@ -97,7 +106,6 @@
     </div>
     <img src="/images/product/bedroom_modal_image.png" alt="3) 수면 케어룸">
 </div>
-
 <div class="modal" id="modal4">
     <div class="modal-content">
         <h2>Healing Me</h2>
@@ -106,42 +114,36 @@
     </div>
     <img src="/images/product/healingme_modal_image.png" alt="4) 힐링미 안마의자">
 </div>
-
 <script>
     // 모든 + 버튼에 이벤트 리스너 추가
-	const modals = document.querySelectorAll('.modal');
-	const modalBtns = document.querySelectorAll('.plus-button');
-
-	// 모든 모달 기본 숨김 설정
-	modals.forEach(modal => {
-		modal.style.display = 'none'; // 기본적으로 숨김 처리
-	});
-
-	modalBtns.forEach((btn, index) => {
-		btn.addEventListener('click', function() {
-			// 모든 모달 창을 닫기
-			modals.forEach(modal => modal.style.display = 'none');
-
-			// 해당 버튼의 모달 열기
-			const modal = document.getElementById(`modal${index + 1}`);
-			const btnRect = btn.getBoundingClientRect();
-			modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
-			modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
-			modal.style.display = "flex";
-
-			// 클릭된 버튼에 active 클래스 추가 및 다른 버튼 축소
-			modalBtns.forEach((b) => {
-				if (b !== btn) {
-					b.classList.remove('active');
-					b.classList.add('shrink'); // 나머지 버튼은 축소
-				} else {
-					b.classList.remove('shrink'); // 클릭된 버튼은 축소되지 않음
-					b.classList.add('active'); // 클릭된 버튼 확대
-				}
-			});
-		});
-	});
-
+    const modals = document.querySelectorAll('.modal');
+    const modalBtns = document.querySelectorAll('.plus-button');
+    // 모든 모달 기본 숨김 설정
+    modals.forEach(modal => {
+       modal.style.display = 'none'; // 기본적으로 숨김 처리
+    });
+    modalBtns.forEach((btn, index) => {
+       btn.addEventListener('click', function() {
+          // 모든 모달 창을 닫기
+          modals.forEach(modal => modal.style.display = 'none');
+          // 해당 버튼의 모달 열기
+          const modal = document.getElementById(`modal${index + 1}`);
+          const btnRect = btn.getBoundingClientRect();
+          modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
+          modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
+          modal.style.display = "flex";
+          // 클릭된 버튼에 active 클래스 추가 및 다른 버튼 축소
+          modalBtns.forEach((b) => {
+             if (b !== btn) {
+                b.classList.remove('active');
+                b.classList.add('shrink'); // 나머지 버튼은 축소
+             } else {
+                b.classList.remove('shrink'); // 클릭된 버튼은 축소되지 않음
+                b.classList.add('active'); // 클릭된 버튼 확대
+             }
+          });
+       });
+    });
     // 모달 외부 클릭 시 닫기
     window.addEventListener('click', function(event) {
         modals.forEach(modal => {
@@ -155,6 +157,5 @@
         });
     });
 </script>
-
 </body>
 </html>
