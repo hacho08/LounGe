@@ -11,20 +11,12 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-<<<<<<< HEAD
     font-family: 'Pretendard', Arial, sans-serif; /* Pretendard 폰트 적용 */
     box-sizing: border-box;
     background-color: #f4f4f4; /* 배경색 */
 }
 
 /* 페이지를 상단(헤더)과 하단(콘텐츠 영역)으로 나누기 */
-=======
-    font-family: 'Pretendard', Arial, sans-serif;
-    box-sizing: border-box;
-    background-color: #FBFBFB;
-}
-
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 .container {
     display: flex;
     flex-direction: column;
@@ -32,15 +24,10 @@ body, html {
     padding: 20px;
 }
 
-<<<<<<< HEAD
+
 /* 상단 영역 (헤더) */
 .header {
     background-color: #f8f8f8;
-=======
-/* 상단 헤더 영역 */
-.header {
-    background-color: #fff;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -57,34 +44,23 @@ body, html {
     gap: 20px;
 }
 
-<<<<<<< HEAD
+
 /* 리뷰와 로그인 버튼 스타일 */
 .header button {
     display: flex;
     align-items: center; /* 텍스트와 이미지를 수직으로 가운데 정렬 */
-=======
-.header button {
-    display: flex;
-    align-items: center;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     padding: 10px 15px;
     border: 1px solid #ddd;
     background-color: #fff;
     cursor: pointer;
 }
 
-<<<<<<< HEAD
 /* 버튼 안의 이미지 스타일 */
 .header button img {
     width: 20px; /* 아이콘 크기 */
     height: 20px;
     margin-right: 8px; /* 이미지와 텍스트 간 간격 */
-=======
-.header button img {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
+
 }
 
 .header button:hover {
@@ -95,20 +71,6 @@ body, html {
 .content {
     display: flex;
     flex: 1;
-<<<<<<< HEAD
-    justify-content: center; /* 중앙 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
-}
-
-/* 사이드바 설정 */
-.sidebar {
-    width: 25%;
-    background-color: #ffffff; /* 흰색 배경 */
-    padding: 20px;
-    border-radius: 10px; /* 모서리를 둥글게 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
-    border: 1px solid #ddd; /* 옅은 테두리 */
-=======
     justify-content: center;
     align-items: center;
 }
@@ -120,7 +82,6 @@ body, html {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -129,35 +90,21 @@ body, html {
 /* What's New 영역 */
 .whats-new {
     margin-bottom: 20px;
-<<<<<<< HEAD
-}
-
-/* What's New 타이틀 스타일 */
-=======
     padding-left : 35px;
 }
 
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 .whats-new-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
-<<<<<<< HEAD
-    margin-bottom: 10px;
-=======
     margin-bottom: 5px;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 }
 
 .whats-new-title h2 {
     font-size: 18px;
-<<<<<<< HEAD
-    color: #E92662; /* 빨간색 */
-=======
     color: #E92662;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     font-weight: bold;
 }
 
@@ -177,26 +124,14 @@ li {
     font-size: 16px;
 }
 
-<<<<<<< HEAD
 
-
-
-
-=======
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 /* 실시간 공간 상태 */
 .real-time-status {
     background-color: #fff;
     padding: 20px;
-<<<<<<< HEAD
-}
-
-/* 실시간 공간 상태 타이틀과 선 추가 */
-=======
     padding-left : 35px;
 }
 
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 .real-time-status h2 {
     font-size: 18px;
     font-weight: bold;
@@ -205,10 +140,8 @@ li {
     padding-bottom: 10px;
 }
 
-<<<<<<< HEAD
+
 /* 실시간 공간 상태 - 어서와요 섹션 */
-=======
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 .welcome-section h3 {
     font-size: 20px;
     color: #E92662;
@@ -221,52 +154,6 @@ li {
     color: #555;
 }
 
-<<<<<<< HEAD
-/* 실시간 공간 상태 - 하위 섹션 스타일 */
-.status-section {
-    margin-bottom: 15px;
-}
-
-.status-section h3 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #191F28;
-}
-
-.status-section p {
-    font-size: 14px;
-    margin: 0;
-}
-
-/* 온도/습도 섹션 */
-.temperature-humidity {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.temperature-humidity .icon {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.status-section img {
-    width: 100%
-    max-width: 100px;
-    height: auto;
-}
-
-/* 공기 청정도 도표 */
-.air-quality {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-=======
 /* 온도/습도 이미지 크기 제한 */
 .status-section img {
     width: 100%;      /* 부모 요소에 맞게 이미지를 늘릴 수 있도록 */
@@ -276,19 +163,13 @@ li {
 
 
 /* 공기 청정도 도표 */
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
+
 .air-quality-bar {
     width: 100%;
     height: 20px;
     background-color: #e0e0e0;
     border-radius: 5px;
     position: relative;
-<<<<<<< HEAD
-}
-
-.air-quality-fill {
-    width: 86%; /* 공기 청정도 조절 */
-=======
     overflow: hidden;
     margin-top: 10px; /* 상태 바와 텍스트 사이 간격 */
 }
@@ -296,20 +177,10 @@ li {
 /* 공기 청정도 상태 표시 */
 .air-quality-fill {
     width: 86%; /* 현재 공기 청정도를 나타내는 비율 */
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     height: 100%;
     background-color: #b3e5fc;
     border-radius: 5px;
 }
-
-<<<<<<< HEAD
-.air-quality-label {
-    font-size: 14px;
-    color: #333;
-}
-=======
-
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 
 /* 메인 3D 공간 */
 .main {
@@ -321,16 +192,9 @@ li {
     position: relative;
 }
 
-<<<<<<< HEAD
-/* 3D 공간에 이미지 배경 설정 */
-.three-d-space {
-    width: 600px;
-    height: 480px;
-=======
 .three-d-space {
     width: 700px;
     height: 560px;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     background-image: url('/images/main/main_lounge.png');
     background-size: cover;
     background-position: center;
@@ -339,18 +203,8 @@ li {
     justify-content: center;
     align-items: center;
     position: relative;
-<<<<<<< HEAD
-    color: white;
 }
 
-=======
-}
-
-
-
-
-
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 /* + 버튼 스타일 */
 .plus-button {
     width: 50px;
@@ -365,18 +219,6 @@ li {
     color: white;
     cursor: pointer;
     position: absolute;
-<<<<<<< HEAD
-    top: 150px;
-    left: 500px;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-}
-
-/* 호버 시 버튼이 커지고 배경색 및 글자 색상이 변경되는 효과 */
-.plus-button:hover {
-    transform: scale(1.2);
-    background-color: #fff; /* 배경색 변경 */
-    color: #FF9C52; /* + 글자 색 변경 */
-=======
     transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -407,42 +249,21 @@ li {
     transform: scale(1.2); /* 클릭된 버튼은 클릭된 상태 그대로 유지 */
     background-color: #fff; /* 배경색과 크기를 원래대로 유지 */
     color: #FF9C52;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 }
 
 
 
 
-<<<<<<< HEAD
 
-
-/* 모달 기본 스타일 */
-.modal {
-    display: none;
-    position: absolute;
-    background-color: white;
-=======
 /* 모달 */
 .modal {
     display: none;
     position: absolute;
     background: linear-gradient(to bottom, #FFE7D4, #FFFFFF); /* 그라데이션 적용 */
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     border-radius: 15px;
-<<<<<<< HEAD
-    width: 300px;
-    width: 420px; /* 모달의 너비를 넓혀 이미지와 텍스트 공간 확보 */
-    display: flex; /* 이미지와 내용을 나란히 배치 */
-    justify-content: space-between; /* 이미지와 텍스트 사이 간격 */
-    align-items: center; /* 수직 가운데 정렬 */
-}
-
-.modal img {
-    width: 250px; /* 이미지 크기 */
-=======
     width: 420px;
     display: flex;
     justify-content: space-between;
@@ -451,7 +272,6 @@ li {
 
 .modal img {
     width: 250px;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     border-radius: 10px;
 }
 
@@ -461,14 +281,6 @@ li {
     gap: 10px;
 }
 
-<<<<<<< HEAD
-
-<!--        .modal.active {-->
-<!--            display: block;-->
-<!--        }-->
-
-=======
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 .modal h2 {
     margin-bottom: 20px;
     font-size: 24px;
@@ -476,85 +288,24 @@ li {
 }
 
 .modal-content button {
-<<<<<<< HEAD
-    padding: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-.reservation-btn {
     padding: 15px 30px;
-    width: 180px; /* 버튼 너비 */
-=======
-    padding: 15px 30px;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     font-size: 18px;
     font-weight: 900;
     cursor: pointer;
     border: none;
     border-radius: 10px;
-<<<<<<< HEAD
-    text-align: center;
-=======
 }
 
 .reservation-btn {
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     background-color: #FF9C52;
     color: white;
 }
 
 .report-btn {
-<<<<<<< HEAD
-    padding: 15px 30px;
-    width: 180px; /* 버튼 너비 */
-    font-size: 18px;
-    font-weight: 900;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    text-align: center;
-=======
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
     background-color: #EEEEEE;
     color: #4E5968;
 }
 
-<<<<<<< HEAD
-a {
-    color: inherit; /* 텍스트 색상을 부모 요소의 색상으로 상속 */
-    text-decoration: none; /* 밑줄 제거 */
-}
-
-a:hover {
-    color: #007BFF; /* 링크에 마우스를 올렸을 때의 색상 (선택 사항) */
-    text-decoration: none; /* 마우스를 올렸을 때도 밑줄 제거 */
-}
-
-/* 호버 시 버튼이 커지고 배경색 및 글자 색상이 변경되는 효과 */
-.plus-button:hover {
-    transform: scale(1.2);
-    background-color: #fff; /* 배경색 변경 */
-    color: #FF9C52; /* + 글자 색 변경 */
-}
-/* 클릭 후 active 상태 스타일 (호버된 상태 유지) */
-.plus-button.active {
-    transform: scale(1.2); /* 크기 확대 유지 */
-    background-color: #fff; /* 배경색 유지 */
-    color: #FF9C52; /* 글자 색 유지 */
-}
-
-/* 텍스트 스타일 */
-.lounge-name {
-    position: absolute;
-    top: -26px; /* 텍스트 위치 (위에서 10px) */
-    left: 8%; /* 가운데 정렬 */
-    transform: translateX(-50%);
-    font-size: 17px;
-    font-weight: bold;
-    color: #333;
-=======
 /* 텍스트 스타일 */
 .lounge-name {
     position: absolute;
@@ -572,5 +323,4 @@ a {
 
 a:hover {
     color: #007BFF;
->>>>>>> a4a3695d68944f6ef3036037f032664395867ca5
 }
