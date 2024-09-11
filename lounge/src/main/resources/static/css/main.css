@@ -1,0 +1,321 @@
+/* Pretendard Variable 폰트 적용 */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/PretendardVariable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* 전체 레이아웃 설정 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Pretendard', Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: #FBFBFB;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* 상단 헤더 영역 */
+.header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .logo img {
+    width: 150px;
+}
+
+.header .nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.header button {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.header button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.header button:hover {
+    background-color: #eee;
+}
+
+/* 하단 영역 (사이드바 + 메인 컨텐츠) */
+.content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* What's New 영역 */
+.whats-new {
+    margin-bottom: 20px;
+    padding-left : 35px;
+}
+
+.whats-new-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.whats-new-title h2 {
+    font-size: 18px;
+    color: #E92662;
+    font-weight: bold;
+}
+
+.whats-new-title .plus-icon {
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* 실시간 공간 상태 */
+.real-time-status {
+    background-color: #fff;
+    padding: 20px;
+    padding-left : 35px;
+}
+
+.real-time-status h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.welcome-section h3 {
+    font-size: 20px;
+    color: #E92662;
+    margin-bottom: 3px;
+    font-weight: 900;
+}
+
+.welcome-section p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* 온도/습도 이미지 크기 제한 */
+.status-section img {
+    width: 100%;      /* 부모 요소에 맞게 이미지를 늘릴 수 있도록 */
+    max-width: 300px; /* 최대 너비를 300px로 제한 */
+    height: auto;     /* 비율에 맞춰 높이 자동 조정 */
+}
+
+
+/* 공기 청정도 도표 */
+.air-quality-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px; /* 상태 바와 텍스트 사이 간격 */
+}
+
+/* 공기 청정도 상태 표시 */
+.air-quality-fill {
+    width: 86%; /* 현재 공기 청정도를 나타내는 비율 */
+    height: 100%;
+    background-color: #b3e5fc;
+    border-radius: 5px;
+}
+
+
+
+/* 메인 3D 공간 */
+.main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.three-d-space {
+    width: 700px;
+    height: 560px;
+    background-image: url('/images/main/main_lounge.png');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+
+
+/* + 버튼 스타일 */
+.plus-button {
+    width: 50px;
+    height: 50px;
+    background-color: #FFC193;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* hover 효과: 마우스를 올리면 약간 커지도록 */
+.plus-button:hover {
+    transform: scale(1.4); /* 약간 커짐 */
+    background-color: #FFC193;
+    color: white;
+}
+
+/* 클릭된 + 버튼 활성화 상태 */
+.plus-button.active {
+    transform: scale(1.2); /* 클릭된 버튼은 커짐 */
+    background-color: #fff; /* 배경색 변경 */
+    color: #FF9C52; /* 글자 색 변경 */
+}
+
+/* 다른 버튼들이 축소되는 상태 */
+.plus-button.shrink {
+    transform: scale(0.4); /* 축소 */
+    opacity: 0.85; /* 약간 투명하게 */
+    pointer-events: none; /* 클릭 불가로 만듦 */
+}
+
+
+/* 클릭된 버튼에 hover 효과를 제거 */
+.plus-button.active:hover {
+    transform: scale(1.2); /* 클릭된 버튼은 클릭된 상태 그대로 유지 */
+    background-color: #fff; /* 배경색과 크기를 원래대로 유지 */
+    color: #FF9C52;
+}
+
+
+
+
+/* 모달 */
+.modal {
+    display: none;
+    position: absolute;
+    background: linear-gradient(to bottom, #FFE7D4, #FFFFFF); /* 그라데이션 적용 */
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 15px;
+    width: 420px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #191F28;
+}
+
+.modal-content button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.reservation-btn {
+    background-color: #FF9C52;
+    color: white;
+}
+
+.report-btn {
+    background-color: #EEEEEE;
+    color: #4E5968;
+}
+
+/* 텍스트 스타일 */
+.lounge-name {
+    position: absolute;
+    top: -26px;
+    left: 1%;
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #007BFF;
+}
