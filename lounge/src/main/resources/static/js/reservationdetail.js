@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedDateElement = document.getElementById('selected-date');
     const selectedTimeElement = document.getElementById('selected-time');
     const selectedDurationElement = document.getElementById('selected-duration');
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentIndex = 0;
     let selectedDate = '';
     let selectedTime = '';
     let selectedPeriod = '오전';  // 기본값을 '오전'으로 설정
@@ -118,4 +121,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.querySelector('.reservation-info').textContent = reservationInfo;
     }
+
+    // 슬라이드 전환 함수
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');  // 모든 슬라이드에서 active 제거
+            indicators[i].classList.remove('active');  // 모든 인디케이터에서 active 제거
+        });
+
+        // 선택된 슬라이드와 인디케이터에 active 클래스 추가
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+    }
+
+    // 인디케이터 클릭 이벤트 추가
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            currentIndex = index;
+            showSlide(currentIndex);  // 선택한 슬라이드로 전환
+        });
+    });
+
+    // 페이지 로드 시 첫 슬라이드 표시
+    showSlide(currentIndex);
+
 });
