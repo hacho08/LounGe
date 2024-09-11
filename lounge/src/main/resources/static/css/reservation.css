@@ -46,16 +46,20 @@ header {
 .main-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    gap: 50px;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-/* Product Box */
+.product-box, .calendar-section, .time-slots-section {
+    flex: 1; /* 화면에서 각각 1/3을 차지하게 함 */
+    max-width: 33%;
+}
+
+/* 제품 박스 */
 .product-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -93,41 +97,18 @@ header {
     background-color: orange;
 }
 
-/* Flatpickr 달력 스타일 */
+/* 캘린더와 시간 슬롯 섹션 */
+.calendar-time-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Flatpickr 캘린더 스타일 */
 .flatpickr-calendar {
     font-size: 14px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.flatpickr-months {
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
-}
-
-.flatpickr-prev-month, .flatpickr-next-month {
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.flatpickr-weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    justify-items: center;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.flatpickr-day {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
+    width: 100%; /* 캘린더가 주어진 공간을 가득 채우도록 */
 }
 
 .flatpickr-day.today {
@@ -147,91 +128,40 @@ header {
     cursor: not-allowed;
 }
 
-.dayContainer {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    justify-items: center;
-}
-
-/* Time Slot 스타일 */
-.time-info {
+/* 시간 슬롯 스타일 */
+.time-slots-section {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.time-guide-left {
-    font-size: 14px;
-    margin-bottom: 20px;
-    text-align: left;
-    color: #555;
-}
-
-.legend-section {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-}
-
-.legend {
-    width: 15px;
-    height: 15px;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.legend.available {
-    background-color: orange;
-}
-
-.legend.closed {
-    background-color: #ccc;
-}
-
-.calendar_time_selector {
-    margin-top: 10px;
-}
-
-.time_slots_container {
-    display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
-    align-items: center;
-    position: relative;
 }
 
-ul.time_slots {
+.time_slots {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 2px;
+    gap: 5px;
     justify-content: center;
-    align-items: flex-start;
-    position: relative;
+    flex-wrap: wrap;
 }
 
 .time_slot {
-    background-color: #ffc299;
-    padding: 20px 0;
-    border-radius: 0;
+    background-color: #e0ffe0;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
     text-align: center;
-    width: 50px;
-    height: 60px;
-    position: relative;
+    min-width: 60px;
 }
 
 .time_slot.closed {
-    background-color: #f2f2f2;
+    background-color: #f0f0f0;
     cursor: not-allowed;
 }
 
-.time_text {
-    position: absolute;
-    top: -25px;
-    font-size: 16px;
-    color: #333;
-    width: 100%;
+.time_label {
+    font-weight: bold;
+    margin-bottom: 5px;
     text-align: center;
 }
 

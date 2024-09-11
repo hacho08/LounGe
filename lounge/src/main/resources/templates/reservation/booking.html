@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation Page</title>
+    <title>예약 페이지</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="/css/reservation.css">
 </head>
 <body>
 <div class="container">
-    <!-- Header -->
+    <!-- 헤더 -->
     <header>
         <div class="logo">
-            <img src="/images/icon/logo icon.png" alt="LounGe Logo" class="logo-img">
+            <img src="/images/icon/logo icon.png" alt="LounGe 로고" class="logo-img">
         </div>
         <div class="header-actions">
             <button>리뷰</button>
@@ -20,15 +20,15 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- 메인 콘텐츠 -->
     <div class="main-content">
-        <!-- Product Image Section -->
+        <!-- 제품 이미지 섹션 -->
         <div class="product-box">
             <div class="product-image">
                 <span class="product-name">스타일러</span>
-                <img src="/images/reservation/styler/res_styler_front.png" alt="Product Image">
+                <img src="/images/reservation/styler/res_styler_front.png" alt="제품 이미지">
             </div>
-            <!-- Image Dots -->
+            <!-- 이미지 점 -->
             <div class="image-dots">
                 <span class="dot"></span>
                 <span class="dot"></span>
@@ -37,55 +37,40 @@
             </div>
         </div>
 
-        <!-- Reservation Section -->
+        <!-- 예약 섹션 -->
         <div class="reservation-section">
-            <!-- Calendar Header -->
-            <div class="calendar-header">
-                <div class="calendar-title">
-                    <img src="/images/icon/icon_calendar.png" alt="Calendar Icon" class="calendar-icon">
-                    <span class="reservation-title">예약</span>
+            <!-- 캘린더와 시간 선택 버튼을 담은 섹션 -->
+            <div class="calendar-time-container">
+                <!-- 캘린더 (Flatpickr 적용) -->
+                <div class="calendar-section">
+                    <div id="datePicker"></div>
                 </div>
-            </div>
 
-            <!-- Calendar (Flatpickr 적용) -->
-            <div class="calendar-section">
-                <div id="datePicker"></div> <!-- 화면에 달력을 바로 표시 -->
-            </div>
-
-            <!-- Time Slots and Instruction -->
-            <div class="time-info">
-                <div class="time-guide-left">
-                    하루에 최대 2타임까지 예약 가능
-                </div>
-                <div class="legend-section">
-                    <span class="legend available"></span> 예약 가능
-                    <span class="legend closed"></span> 마감
-                </div>
-            </div>
-
-            <!-- Time Slots -->
-            <div class="calendar_time_selector">
-                <div class="time_slots_container">
-                    <ul class="time_slots">
-                        <span class="time_label morning">오전</span>
-                        <li class="time_slot available">12시</li>
-                        <li class="time_slot available">1시</li>
-                        <li class="time_slot available">2시</li>
-                        <li class="time_slot available">3시</li>
-                        <li class="time_slot available">4시</li>
-                        <li class="time_slot available">5시</li>
-                        <li class="time_slot available">6시</li>
-                        <li class="time_slot closed">7시</li>
-                        <li class="time_slot closed">8시</li>
-                        <li class="time_slot closed">9시</li>
-                        <li class="time_slot closed">10시</li>
-                        <li class="time_slot closed">11시</li>
-                        <span class="time_label afternoon">오후</span>
+                <!-- 시간 선택 섹션 -->
+                <div class="time-slots-section">
+                    <span class="time_label">오전</span>
+                    <ul class="time_slots morning">
+                        <li class="time_slot available">10:00</li>
+                        <li class="time_slot available">11:00</li>
+                        <li class="time_slot available">12:00</li>
+                    </ul>
+                    <span class="time_label">오후</span>
+                    <ul class="time_slots afternoon">
+                        <li class="time_slot available">1:00</li>
+                        <li class="time_slot available">2:00</li>
+                        <li class="time_slot available">3:00</li>
+                        <li class="time_slot available">4:00</li>
+                        <li class="time_slot available">5:00</li>
+                        <li class="time_slot available">6:00</li>
+                        <li class="time_slot available">7:00</li>
+                        <li class="time_slot available">8:00</li>
+                        <li class="time_slot available">9:00</li>
+                        <li class="time_slot available">10:00</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Reservation Button -->
+            <!-- 예약 버튼 -->
             <div class="reservation-button-container">
                 <button class="reservation-button">예약하기</button>
             </div>
@@ -97,14 +82,12 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
     flatpickr("#datePicker", {
-        inline: true,  // 화면에 달력을 바로 표시
+        inline: true,
         dateFormat: "Y-m-d",
         onChange: function(selectedDates, dateStr, instance) {
-            // 날짜 선택 시 타임테이블 업데이트
             console.log("선택된 날짜: ", dateStr);
         }
     });
 </script>
-
 </body>
 </html>
