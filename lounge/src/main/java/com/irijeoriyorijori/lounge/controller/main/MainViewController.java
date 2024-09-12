@@ -27,15 +27,18 @@ public class MainViewController {
 //        return "login";
 //    }
 
+
 //    @GetMapping("/review")
 //    public String review() {
 //        return "review/reviewList";
 //    }
 
+
     @GetMapping("test")
     public String test() {
         return "layout/layout";
     }
+
 
 //    @GetMapping("/report")
 //    public String report(@RequestParam(name="device") String device) {
@@ -49,7 +52,6 @@ public class MainViewController {
         }
         return "main";  // main.html 템플릿 반환
     }
-
 
 }
 

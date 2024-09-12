@@ -11,7 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ReportController {
+
+public class ReportViewController {
+
+	@GetMapping("/report")
+	public String report(@RequestParam(name="device") String device) {
+		return "reports/reports";
+	}
 
 }
 
