@@ -1,10 +1,8 @@
 .review-container {
-    width: 100%;
-    max-width: 1150px; /* 컨테이너의 최대 너비를 설정하여 검색창이 벗어나지 않도록 함 */
-    padding-left: 12.5%;
-    padding-right: 12.5%;
-    margin: 0 auto; /* 컨테이너를 화면 중앙에 배치 */
-    margin-top: 10px;
+    width: 75%; /* 전체 화면의 75%를 차지하도록 설정 */
+    padding: 0 12.5%; /* 좌우 여백을 동일하게 줘서 중앙 정렬 유지 */
+    margin: 0 auto; /* 화면 중앙에 배치 */
+    margin-top: 30px;
 }
 
 .filter-container {
@@ -21,11 +19,13 @@
 }
 
 .category {
-    background-color: #f0f0f0;
+    background-color: rgba(139, 149, 161, 0.15); /* 15% 투명도 */
+    color: #191F28;
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
+    font-weight: 600; /* 세미 볼드 */
 }
 
 .category.active {
@@ -43,13 +43,16 @@
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.03);
+    flex-direction: column; /* 컨텐츠와 footer를 세로로 정렬 */
+    justify-content: space-between; /* footer를 항상 아래쪽에 배치 */
 }
 
 .review-header {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .user-info {
@@ -73,12 +76,14 @@
 .review-content {
     font-size: 15px;
     margin-bottom: 10px;
+    flex-grow: 1; /* 리뷰 내용의 영역이 footer를 밀어 올리지 않게 확장 */
 }
 
 .like-section {
     display: flex;
     align-items: center; /* 아이콘과 숫자를 수평으로 정렬 */
     gap: 5px; /* 아이콘과 숫자 사이의 간격 */
+    justify-content: flex-start; /* 좋아요 버튼과 숫자를 왼쪽 정렬 */
 }
 
 .thumbs-up-btn {
@@ -86,17 +91,17 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    width: 30px;  /* 버튼의 크기를 줄입니다. */
-    height: 30px; /* 버튼의 크기를 줄입니다. */
+    width: 20px;  /* 버튼의 크기를 줄입니다. */
+    height: 20px; /* 버튼의 크기를 줄입니다. */
 }
 
 .thumbs-up-btn img {
-    width: 20px;  /* 이미지를 더 작게 조정합니다. */
-    height: 20px;
+    width: 18px;  /* 이미지를 더 작게 조정합니다. */
+    height: 18px;
 }
 
 .like-count {
-    font-size: 14px; /* 숫자 크기 */
+    font-size: 13px; /* 숫자 크기 */
     color: #666; /* 숫자 색상 */
 }
 
@@ -110,22 +115,23 @@
     justify-content: center; /* 중앙 정렬 */
     align-items: center;
     margin-top: 20px;
+    font-weight: 600;
 }
 
 .pagination a {
     text-decoration: none;
-    margin: 0 10px; /* 각 페이지 번호 사이 간격 */
+    margin: 18px; /* 각 페이지 번호 사이 간격 */
     color: #c2c2c2; /* 페이지 번호 기본 색상 */
     font-size: 16px;
     font-weight: normal;
 }
 
 .pagination a.page.active {
-    color: #333; /* 선택된 페이지 색상 */
+    color: #656565; /* 선택된 페이지 색상 */
 }
 
 .pagination a:hover {
-    color: #000; /* 호버 시 색상 */
+    color: #656565; /* 호버 시 색상 */
 }
 
 .pagination a.prev, .pagination a.next {
@@ -134,5 +140,5 @@
 }
 
 .pagination a.prev:hover, .pagination a.next:hover {
-    color: #000; /* 호버 시 화살표 색상 */
+    color: #656565; /* 호버 시 화살표 색상 */
 }

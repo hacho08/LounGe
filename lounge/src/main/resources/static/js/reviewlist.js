@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const categoryButtons = document.querySelectorAll('.category');
 
     // 카테고리 필터 클릭 시
