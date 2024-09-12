@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>리뷰 작성</title>
+	<link rel="stylesheet" href="/css/reviewWrite.css">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<script src="/js/reviewWrite.js"></script>
+</head>
+
+<body>
+<!-- 상단 -->
+<th:block th:replace="layout/fragments/header :: headerLayout"></th:block>
+
+<!-- 하단 -->
+
+<div class="container">
+
+	<!-- 하단 좌측 -->
+	<div class="content">
+		<h1>리뷰 작성</h1>
+		<div class="input-area">
+			<textarea id="reportTextarea" placeholder="LounGe 는 잘 이용하셨나요?
+느낀 경험을 자유롭게 작성해주세요 :D" rows="20" cols="50"></textarea>
+
+			<div class="button-container">
+				<button class="submit-button">등록하기</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- 하단 우측 -->
+	<div class="previous-usage">
+		<div class="search-previous">
+			<h3 class="previous-usage-title">이전에 사용한 기기</h3>
+			<img src="/images/icon/icon_search.png" alt="🔍" class="hidden">
+		</div>
+		<hr class="custom-hr">
+
+
+		<div class="transparent-list">
+			<!-- 이전 사용 기기 스크롤 가능 -->
+			<div class="previous-usage-scrollable">
+				<div class="device-list">
+					<img src="/images/product/styler_modal_image.png" alt="스타일러" class="device-image">
+					<div class="device-info">
+						<p class="usage-device-name">스타일러</p>
+						<p class="usage-device-times">1회 사용</p>
+						<p class="date">2024-09-14</p>
+					</div>
+				</div>
+				<div class="device-list">
+					<img src="/images/product/healingme_modal_image.png" alt="힐링미" class="device-image">
+					<div class="device-info">
+						<p class="usage-device-name">힐링미</p>
+						<p class="usage-device-times">3회 사용</p>
+						<p class="date">2024-09-14</p>
+					</div>
+				</div>
+				<div class="device-list">
+					<img src="/images/product/standbyme_modal_image.png" alt="스탠바이미" class="device-image">
+					<div class="device-info">
+						<p class="usage-device-name">스탠바이미</p>
+						<p class="usage-device-times">2회 사용</p>
+						<p class="date">2024-09-13</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- 이전 사용 기기 스크롤 위 투명도 레이어 -->
+			<div class="transparent-layer"></div>
+		</div>
+
+	</div>
+</div>
+
+</body>
+</html>
