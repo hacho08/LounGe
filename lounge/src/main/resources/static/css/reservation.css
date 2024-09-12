@@ -20,13 +20,17 @@ body, html {
 /* 컨테이너 레이아웃 */
 .container {
     max-width: 1100px;
-    margin: 0 auto;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 100px; /* 요소 간 간격을 적절하게 조정 */
-    position: relative; /* Reservation button을 절대 위치로 배치하기 위한 설정 */
+    justify-content: center; /* Center the content horizontally */
+    align-items: flex-start; /* Align at the top */
+    gap: 100px;
+    position: relative;
+    background-color: #fbfbfb;
+    margin: 50px auto;  /* 화면 중앙으로 수평 정렬 */
+    /* 테두리와 그림자 제거 */
+    box-shadow: none; /* 기존 그림자 제거 */
+    border-radius: 0; /* 둥근 모서리 제거 */
 }
 
 /* Header 스타일링 */
@@ -84,9 +88,13 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex-shrink: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .product-box h3 {
+    margin-top: 0;  /* Remove any top margin */
+    padding-top: 0; /* Remove any top padding */
     text-align: left; /* 텍스트를 왼쪽으로 정렬 */
 }
 
@@ -107,6 +115,23 @@ body, html {
     gap: 20px;  /* 아이콘과 텍스트 사이 간격 */
 }
 
+.reservation-date-title,
+.reservation-time-title {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* 아이콘과 텍스트 사이 간격을 10px로 변경 */
+    margin-bottom: 10px; /* 요소 사이의 간격 추가 */
+}
+
+.reservation-date-title .icon,
+.reservation-time-title .icon {
+    width: 20px;  /* 아이콘 크기 설정 */
+    height: 20px;  /* 아이콘 크기 설정 */
+    vertical-align: middle; /* 아이콘의 수직 정렬 */
+}
+
 /* reservation-section을 예약 날짜와 예약 시작시간을 가로로 배치하도록 설정 */
 .reservation-section {
     display: flex;
@@ -122,37 +147,20 @@ body, html {
     flex-direction: column;
     align-items: flex-start;
     width: 300px;  /* Adjust width to make it more compact */
+    height: auto;
+    overflow: visible;
+    margin-top: 10px;
     margin-bottom: 10px;
     flex: 1;
-}
-
-.reservation-date-title,
-.reservation-time-title {
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;  /* 아이콘과 텍스트 사이 간격 */
-    margin-bottom: 10px; /* Add some margin to control positioning */
-}
-
-.reservation-date-title .icon {
-    width: 20px;  /* 아이콘 크기 설정 */
-    height: 20px;  /* 아이콘 크기 설정 */
-    vertical-align: middle; /* 아이콘의 수직 정렬 */
 }
 
 .reservation-time-title {
     display: flex;
     align-items: center;  /* 세로로 중앙 정렬 */
-    justify-content: space-between;  /* 텍스트와 아이콘을 양 끝에 배치 */
+    /* justify-content: space-between;  텍스트와 아이콘을 양 끝에 배치할 필요가 없으므로 삭제 */
     width: 100%;  /* 요소가 가로로 가득 채워지도록 설정 */
-}
-
-.reservation-time-title {
-    display: flex;
-    align-items: center;  /* 아이콘과 텍스트를 수직 중앙으로 정렬 */
-    gap: 5px;  /* 아이콘과 텍스트 사이의 간격 */
+    /* gap: 20px;  아이콘과 텍스트 사이의 간격 설정은 이미 위에서 적용됨 */
+    margin-bottom: 10px;
 }
 
 .max-times-info {
@@ -163,7 +171,9 @@ body, html {
 
 /* Flatpickr 스타일 */
 .flatpickr-calendar {
-    width: 300px;
+    width: 100%;
+    height: auto;
+    overflow: visible;
     border: none;
     box-shadow: none;
     background-color: transparent;
@@ -188,11 +198,15 @@ body, html {
 
 /* 예약 시간 섹션 */
 .reservation-time-section {
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%; /* 가로 너비를 맞춰줌 */
+    width: 300px;  /* Adjust width to make it more compact */
+    margin-top: 10px;
+    margin-bottom: 10px;
     flex: 1;
+
 }
 
 .reservation-time-title {
@@ -246,7 +260,7 @@ body, html {
 }
 
 .slot {
-    background-color: #f9f9f9;
+    background-color: white;
     padding: 15px 20px;
     border-radius: 5px;
     text-align: center;
@@ -269,9 +283,10 @@ body, html {
 /* 예약 시간 이용 버튼 섹션 */
 .usage-duration {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: space-between; /* 양쪽 끝으로 정렬 */
+    width: 100%; /* 부모 요소의 너비를 가득 채우기 */
     margin-top: 10px;
+    gap: 0; /* 버튼 사이의 간격을 없애줌 */
 }
 
 .usage-button {
@@ -283,6 +298,9 @@ body, html {
     transition: background-color 0.3s ease, border-color 0.3s ease;
     font-size: 14px;
     color: #333;
+    flex: 1; /* 버튼을 동일한 크기로 설정 */
+    text-align: center; /* 텍스트를 중앙에 배치 */
+    margin: 0; /* 버튼 사이의 간격을 없앰 */
 }
 
 .usage-button.active {
@@ -306,13 +324,14 @@ body, html {
 /* 예약 버튼 */
 .reservation-button-container {
     display: flex;
-    justify-content: flex-end; /* 오른쪽으로 정렬 */
+    align-items: flex-start;
+    justify-content: flex-start; /* 오른쪽으로 정렬 */
     margin-top: 20px;
     width: 100%; /* 부모 요소의 너비를 100%로 설정 */
 }
 
 .reservation-button {
-    padding: 15px 30px;
+    padding: 10px 20px;
     background-color: #555;
     color: white;
     border: none;
@@ -324,4 +343,55 @@ body, html {
 
 .reservation-button:hover {
     background-color: #777;
+}
+
+/* Slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Each slide */
+.slider {
+    position: relative;
+}
+
+.slide {
+    display: none; /* 기본적으로 모든 슬라이드를 숨기기 */
+    opacity: 0;
+    /* width: 100%;    슬라이드 너비 설정 */
+    transition: opacity 0.5s ease; /* 전환 효과 추가 */
+}
+
+.slide.active {
+    display: block; /* 활성화된 슬라이드는 보이기 */
+    opacity: 1; /* 활성화된 슬라이드가 보이는 동안 투명도 설정 */
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Slider indicators (dots) */
+.slider-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    margin: 0 5px;
+    background-color: lightgray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: orange;
 }
