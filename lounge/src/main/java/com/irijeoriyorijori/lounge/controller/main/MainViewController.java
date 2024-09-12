@@ -18,19 +18,10 @@ public class MainViewController {
         return "login";
     }
 
-    @GetMapping("/review")
-    public String review() {
-        return "review/reviewList";
-    }
-
     @GetMapping("test")
     public String test() {
         return "layout/layout";
     }
 
-    @GetMapping("/report")
-    public String report(@RequestParam(name="device") String device) {
-        return "reports/reports";
-    }
 }
 

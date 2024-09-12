@@ -13,7 +13,7 @@ body, html {
     height: 100%;
     font-family: 'Pretendard', Arial, sans-serif; /* Pretendard 폰트 적용 */
     box-sizing: border-box;
-    background-color: #f4f4f4; /* 배경색 */
+    background-color: #fbfbfb; /* 배경색 */
 }
 
 /* 페이지를 상단(헤더)과 하단(콘텐츠 영역)으로 나누기 */
