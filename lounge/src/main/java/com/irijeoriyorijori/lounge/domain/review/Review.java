@@ -14,7 +14,7 @@ public class Review {
     private String reviewId;
 
     @Column(name = "user_id")
-    private String productItemId;
+    private String userId;
 
     @Column(name = "reservation_id")
     private String reservationId;
@@ -36,12 +36,12 @@ public class Review {
         this.reviewId = reviewId;
     }
 
-    public String getProductItemId() {
-        return productItemId;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setProductItemId(String productItemId) {
-        this.productItemId = productItemId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getReservationId() {
@@ -76,7 +76,6 @@ public class Review {
         this.updatedAt = updatedAt;
     }
 
-
     // 리뷰 생성 시 createdAt, updatedAt 자동 설정
     @PrePersist
     protected void onCreate() {
@@ -91,12 +90,11 @@ public class Review {
         this.updatedAt = new Date();  // 수정 시 현재 시간으로 업데이트
     }
 
-
     @Override
     public String toString() {
         return "Review{" +
                 "reviewId='" + reviewId + '\'' +
-                ", productItemId='" + productItemId + '\'' +
+                ", userId='" + userId + '\'' +
                 ", reservationId='" + reservationId + '\'' +
                 ", content='" + content + '\'' +
                 ", createdAt=" + createdAt +

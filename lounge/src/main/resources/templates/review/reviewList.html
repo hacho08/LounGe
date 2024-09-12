@@ -1,3 +1,138 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>리뷰 보기</title>-->
+
+<!--    <link rel="stylesheet" th:href="@{/css/reviewList.css}">-->
+<!--    <link rel="stylesheet" th:href="@{/css/style.css}">-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<th:block th:replace="layout/fragments/header :: headerLayout"></th:block>-->
+<!--    <div class="review-container">-->
+<!--        <h2>리뷰</h2>-->
+<!--        <div class="filter-container">-->
+<!--            &lt;!&ndash; 카테고리 필터 &ndash;&gt;-->
+<!--            <div class="category-filter">-->
+<!--                <button class="category active">스타일러</button>-->
+<!--                <button class="category">스탠바이미</button>-->
+<!--                <button class="category">슈케어</button>-->
+<!--                <button class="category">힐링미</button>-->
+<!--                <button class="category">수면 케어룸</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; 리뷰 목록 &ndash;&gt;-->
+<!--        <div class="review-list">-->
+<!--            <div class="review-item">-->
+<!--                <div class="review-header">-->
+<!--                    <div class="user-info">-->
+<!--                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >-->
+<!--                        <div class="user-details">-->
+<!--                            <p>익명</p>-->
+<!--                            <p>2024-09-14</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="review-content">-->
+<!--                    이 공간 개좋음 친구들이랑 편하게 수다 떨기 딱 좋음 다음 공강 때도 친구들이랑 여기 오기로 했음 생각보다 훨씬 아늑함-->
+<!--                </div>-->
+<!--                <div class="review-footer">-->
+<!--                    <span class="like-section">-->
+<!--                        <button class="thumbs-up-btn">-->
+<!--                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">-->
+<!--                        </button>-->
+<!--                        <span class="like-count">14</span>-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="review-item">-->
+<!--                <div class="review-header">-->
+<!--                    <div class="user-info">-->
+<!--                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >-->
+<!--                        <div class="user-details">-->
+<!--                            <p>익명</p>-->
+<!--                            <p>2024-09-14</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="review-content">-->
+<!--                    라운지 생기니까 개꿀이다 수다도 떨고 잠깐 잘 수도 있는데 콘센트가 많아서 자리싸움할 일도 없고 ㅋㅋ-->
+<!--                </div>-->
+<!--                <div class="review-footer">-->
+<!--                    <span class="like-section">-->
+<!--                        <button class="thumbs-up-btn">-->
+<!--                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">-->
+<!--                        </button>-->
+<!--                        <span class="like-count">10</span>-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="review-item">-->
+<!--                <div class="review-header">-->
+<!--                    <div class="user-info">-->
+<!--                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >-->
+<!--                        <div class="user-details">-->
+<!--                            <p>익명</p>-->
+<!--                            <p>2024-09-14</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="review-content">-->
+<!--                    통학하느라 피곤했는데 여기 넘 좋당... 맨날 공방에서 쪽잠 자면서 깰 때마다 다른 사람들이랑 눈 마주치는 거 진쨔 민망했는데 ㅎ...!! 이제 그럴 일 없움-->
+<!--                </div>-->
+<!--                <div class="review-footer">-->
+<!--                    <span class="like-section">-->
+<!--                        <button class="thumbs-up-btn">-->
+<!--                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">-->
+<!--                        </button>-->
+<!--                        <span class="like-count">20</span>-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="review-item">-->
+<!--                <div class="review-header">-->
+<!--                    <div class="user-info">-->
+<!--                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >-->
+<!--                        <div class="user-details">-->
+<!--                            <p>익명</p>-->
+<!--                            <p>2024-09-14</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="review-content">-->
+<!--                    스타일러 첨 써봤는데 진짜 좋다.. 땀 냄새 사라짐 ㅋㅋ..-->
+<!--                </div>-->
+<!--                <div class="review-footer">-->
+<!--                    <span class="like-section">-->
+<!--                        <button class="thumbs-up-btn">-->
+<!--                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">-->
+<!--                        </button>-->
+<!--                        <span class="like-count">1</span>-->
+<!--                    </span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; 페이지네이션 &ndash;&gt;-->
+<!--        <div class="pagination">-->
+<!--            <a href="#" class="prev">‹</a>-->
+<!--            <a href="#" class="page active">1</a>-->
+<!--            <a href="#" class="page">2</a>-->
+<!--            <a href="#" class="page">3</a>-->
+<!--            <a href="#" class="page">4</a>-->
+<!--            <a href="#" class="page">5</a>-->
+<!--            <a href="#" class="next">›</a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <script src="script.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -7,128 +142,61 @@
 
     <link rel="stylesheet" th:href="@{/css/reviewList.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
-
 </head>
 <body>
+
 <th:block th:replace="layout/fragments/header :: headerLayout"></th:block>
-    <div class="review-container">
-        <h2>리뷰</h2>
-        <div class="filter-container">
-            <!-- 카테고리 필터 -->
-            <div class="category-filter">
-                <button class="category active">스타일러</button>
-                <button class="category">스탠바이미</button>
-                <button class="category">슈케어</button>
-                <button class="category">힐링미</button>
-                <button class="category">수면 케어룸</button>
-            </div>
-        </div>
-        <!-- 리뷰 목록 -->
-        <div class="review-list">
-            <div class="review-item">
-                <div class="review-header">
-                    <div class="user-info">
-                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >
-                        <div class="user-details">
-                            <p>익명</p>
-                            <p>2024-09-14</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    이 공간 개좋음 친구들이랑 편하게 수다 떨기 딱 좋음 다음 공강 때도 친구들이랑 여기 오기로 했음 생각보다 훨씬 아늑함
-                </div>
-                <div class="review-footer">
-                    <span class="like-section">
-                        <button class="thumbs-up-btn">
-                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">
-                        </button>
-                        <span class="like-count">14</span>
-                    </span>
-                </div>
-            </div>
-
-            <div class="review-item">
-                <div class="review-header">
-                    <div class="user-info">
-                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >
-                        <div class="user-details">
-                            <p>익명</p>
-                            <p>2024-09-14</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    라운지 생기니까 개꿀이다 수다도 떨고 잠깐 잘 수도 있는데 콘센트가 많아서 자리싸움할 일도 없고 ㅋㅋ
-                </div>
-                <div class="review-footer">
-                    <span class="like-section">
-                        <button class="thumbs-up-btn">
-                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">
-                        </button>
-                        <span class="like-count">10</span>
-                    </span>
-                </div>
-            </div>
-
-            <div class="review-item">
-                <div class="review-header">
-                    <div class="user-info">
-                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >
-                        <div class="user-details">
-                            <p>익명</p>
-                            <p>2024-09-14</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    통학하느라 피곤했는데 여기 넘 좋당... 맨날 공방에서 쪽잠 자면서 깰 때마다 다른 사람들이랑 눈 마주치는 거 진쨔 민망했는데 ㅎ...!! 이제 그럴 일 없움
-                </div>
-                <div class="review-footer">
-                    <span class="like-section">
-                        <button class="thumbs-up-btn">
-                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">
-                        </button>
-                        <span class="like-count">20</span>
-                    </span>
-                </div>
-            </div>
-
-            <div class="review-item">
-                <div class="review-header">
-                    <div class="user-info">
-                        <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >
-                        <div class="user-details">
-                            <p>익명</p>
-                            <p>2024-09-14</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    스타일러 첨 써봤는데 진짜 좋다.. 땀 냄새 사라짐 ㅋㅋ..
-                </div>
-                <div class="review-footer">
-                    <span class="like-section">
-                        <button class="thumbs-up-btn">
-                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">
-                        </button>
-                        <span class="like-count">1</span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <!-- 페이지네이션 -->
-        <div class="pagination">
-            <a href="#" class="prev">‹</a>
-            <a href="#" class="page active">1</a>
-            <a href="#" class="page">2</a>
-            <a href="#" class="page">3</a>
-            <a href="#" class="page">4</a>
-            <a href="#" class="page">5</a>
-            <a href="#" class="next">›</a>
+<div class="review-container">
+    <h2>리뷰</h2>
+    <div class="filter-container">
+        <!-- 카테고리 필터 -->
+        <div class="category-filter">
+            <button class="category" th:classappend="${category == '스타일러' ? ' active' : ''}">스타일러</button>
+            <button class="category" th:classappend="${category == '스탠바이미' ? ' active' : ''}">스탠바이미</button>
+            <button class="category" th:classappend="${category == '슈케어' ? ' active' : ''}">슈케어</button>
+            <button class="category" th:classappend="${category == '힐링미' ? ' active' : ''}">힐링미</button>
+            <button class="category" th:classappend="${category == '수면 케어룸' ? ' active' : ''}">수면 케어룸</button>
         </div>
     </div>
+    <!-- 리뷰 목록 -->
+    <div class="review-list">
+        <div th:each="review : ${reviews}" class="review-item">
+            <div class="review-header">
+                <div class="user-info">
+                    <img src="/images/icon/icon_person_white.png" alt="사용자 아이콘" >
+                    <div class="user-details">
+                        <p>익명</p>
+                        <p th:text="${#dates.format(review.updatedAt, 'yyyy-MM-dd')}"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="review-content">
+                <p th:text="${review.content}"></p>
+            </div>
+            <div class="review-footer">
+                    <span class="like-section">
+                        <button class="thumbs-up-btn">
+                            <img src="images/icon/icon_thumbsup.png" alt="좋아요">
+                        </button>
+                        <span class="like-count" th:text="${review.likeCount}">0</span>
+                    </span>
+            </div>
+        </div>
 
-    <script src="script.js"></script>
+    </div>
+    <div class="pagination">
+        <a th:href="@{/review?page=${currentPage - 1}}" class="prev" th:if="${currentPage > 1}">‹</a>
+        <a th:each="pageNum : ${#numbers.sequence(1, totalPages)}"
+           th:href="@{/review?page=${pageNum}}"
+           th:text="${pageNum}"
+           th:classappend="${pageNum == currentPage ? ' active' : ''}"></a>
+        <a th:href="@{/review?page=${currentPage + 1}}" class="next" th:if="${currentPage < totalPages}">›</a>
+    </div>
+</div>
+
+<!--<script src="/js/reviewlist.js"></script>-->
+<script th:src="@{/js/reviewlist.js}"></script>
+
 </body>
 </html>
+

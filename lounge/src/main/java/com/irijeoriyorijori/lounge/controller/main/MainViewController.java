@@ -27,10 +27,10 @@ public class MainViewController {
 //        return "login";
 //    }
 
-    @GetMapping("/review")
-    public String review() {
-        return "review/reviewList";
-    }
+//    @GetMapping("/review")
+//    public String review() {
+//        return "review/reviewList";
+//    }
 
     @GetMapping("test")
     public String test() {
