@@ -13,8 +13,8 @@ fetch('/login-process', {
 })
 .then(response => response.json())
 .then(data => {
-    if (data === true) {  // 서버가 success 값을 true로 반환하면 로그인 성공
-        window.location.href = "/";
+    if (data) {  // 서버가 success 값을 true로 반환하면 로그인 성공
+        window.location.href = "/main";
     } else {
         alert('학번 또는 비밀번호가 올바르지 않습니다.');
     }
@@ -50,22 +50,37 @@ window.addEventListener('DOMContentLoaded', function() {
 //    });
 //});
 
-document.querySelector('.report-btn').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    // 세션 체크
+document.querySelector('.reservation-button').addEventListener('click', function() {
     fetch('/session-check')
-    .then(response => {
-        if (response.status === 200) {
-            // 세션이 있으면 고장 신고 페이지로 이동
-            window.location.href = "reservation/booking";
+    .then(response => response.json())
+    .then(data => {
+        if (data.loggedIn) {
+            // 예약 완료 페이지로 이동
+            window.location.href = '/reservationComplete.html';
         } else {
-            // 세션이 없으면 로그인 페이지로 이동
-            window.location.href = "/login?redirectTo=/reports";
+            // 로그인 페이지로 이동, 예약 페이지 URL을 쿼리 파라미터로 전달
+            window.location.href = '/login?redirectTo=' + encodeURIComponent('/reservation/booking.html');
         }
     })
     .catch(error => {
         console.error('세션 체크 중 오류 발생:', error);
+        alert('서버 오류가 발생했습니다.');
+    });
+});
+
+
+document.querySelectorAll('.report-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        fetch('/session-check')
+        .then(response => {
+            if (response.status === 200) {
+                // 고장 신고 페이지로 이동
+                window.location.href = this.getAttribute('href');
+            } else {
+                // 로그인 페이지로 이동
+                window.location.href = '/login.html?redirectTo=' + encodeURIComponent(this.getAttribute('href'));
+            }
+        });
     });
 });
 

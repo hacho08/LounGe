@@ -1,5 +1,6 @@
 package com.irijeoriyorijori.lounge;
 
+import com.irijeoriyorijori.lounge.domain.review.Review;
 import com.irijeoriyorijori.lounge.domain.user.User;
 import com.irijeoriyorijori.lounge.repository.user.UserRepository;
 import com.irijeoriyorijori.lounge.service.user.UserService;
@@ -7,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
@@ -30,4 +33,5 @@ public class UserServiceTest {
         System.out.println("$$$$$$$$$$$$$$$$$$$$$$$4"+user);
 
     }
+
 }

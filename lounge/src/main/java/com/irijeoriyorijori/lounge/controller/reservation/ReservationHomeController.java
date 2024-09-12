@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ReservationHomeController {
-    
+
     @GetMapping("/reservation/complete")
     public String reservationComplete(Model model) {
         // 예약 완료 화면으로 이동
