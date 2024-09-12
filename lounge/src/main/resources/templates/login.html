@@ -8,25 +8,72 @@
 </head>
 <body>
 <div class="login-container">
+    <div class="logo-container">
+        <img src="images/icon/logo icon.png" alt="logo" class="logo">
+    </div>
     <div class="login-box">
         <form>
-            <label for="userId">아이디(학번)</label>
-            <input type="text" id="userId" name="userId" placeholder="아이디 입력" oninput="checkFields()">
+            <label for="userId">아이디 (학번)</label>
+            <input type="text" id="userId" name="userId" oninput="checkFields()">
+<!--            placeholder="아이디 입력"-->
 
             <label for="password">비밀번호</label>
-            <input type="password" id="password" name="password" placeholder="비밀번호 입력" oninput="checkFields()">
-
-            <div class="keep-logged-in">
-                <input type="checkbox" id="keepLoggedIn">
-                <label for="keepLoggedIn">로그인 상태 유지</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" name="password" oninput="checkFields()">
+                <img src="images/icon/icon_password_invisible.png" class="toggle-password" onclick="togglePassword()" alt="Toggle Password Visibility">
+<!--                default invisible-->
+<!--                placeholder="비밀번호 입력"-->
             </div>
 
-            <button type="submit" id="loginBtn" disabled>로그인</button>
+            <div class="keep-logged-in">
+                <img src="images/icon/icon_checkbox_unchecked.png" class="custom-checkbox" alt="Checkbox" onclick="toggleCheckbox()" id="checkboxIcon">
+                <label for="keepLoggedIn">로그인 상태 유지</label>
+                <input type="checkbox" id="keepLoggedIn" style="display: none;"> <!-- 기본 체크박스는 숨김 -->
+            </div>
         </form>
-        <p class="warning-text">로그인 오류 시, 학교 홈페이지에서 아이디/비밀번호 찾기를 진행해 주세요</p>
     </div>
+
+    <div class="button-container">
+        <button type="submit" id="loginBtn" disabled>로그인</button>
+    </div>
+
+    <p class="warning-text">로그인 오류 시, 학교 홈페이지에서 아이디/비밀번호 찾기를 진행해 주세요</p>
 </div>
 
 <script src="../js/login.js"></script>
+
+<script>
+    function togglePassword() {
+        var passwordInput = document.getElementById("password");
+        var passwordIcon = document.querySelector(".toggle-password");
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordIcon.src = "images/icon/icon_password_visible.png"; // 눈 아이콘을 변경 (보이기 모드)
+        } else {
+            passwordInput.type = "password";
+            passwordIcon.src = "images/icon/icon_password_invisible.png"; // 눈 아이콘을 변경 (숨기기 모드)
+        }
+    }
+</script>
+
+<script>
+    function toggleCheckbox() {
+        var checkbox = document.getElementById("keepLoggedIn");
+        var checkboxIcon = document.getElementById("checkboxIcon");
+
+        // 체크박스 상태를 반전
+        checkbox.checked = !checkbox.checked;
+
+        // 체크박스 상태에 따라 아이콘 변경
+        if (checkbox.checked) {
+            checkboxIcon.src = "images/icon/icon_checkbox_checked.png"; // 체크된 아이콘
+        } else {
+            checkboxIcon.src = "images/icon/icon_checkbox_unchecked.png"; // 체크되지 않은 아이콘
+        }
+    }
+</script>
+
+
 </body>
 </html>

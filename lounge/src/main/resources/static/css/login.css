@@ -15,9 +15,22 @@ body {
 
 .login-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* 로고와 로그인 박스 사이 간격 */
+}
+
+.logo {
+    width: 150px; /* 로고 너비 조정 (원하는 크기로 변경) */
+    height: auto; /* 비율에 맞게 높이 자동 조정 */
+    margin-right: 10px;
 }
 
 .login-box {
@@ -25,16 +38,20 @@ body {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    width: 450px; /* 적절한 가로 길이 설정 */
+    width: 600px; /* 적절한 가로 길이 설정 */
+    height: 320px;
     text-align: center;
+    position: relative;
 }
 
 label {
     display: block;
     font-size: 1rem;
+    font-weight: bold;
+    margin-top: 6px;
     margin-bottom: 5px;
     text-align: left;
-    color: #333;
+    color: #4E5968;
 }
 
 input[type="text"], input[type="password"] {
@@ -42,7 +59,7 @@ input[type="text"], input[type="password"] {
     padding: 12px 0;
     margin-bottom: 20px;
     border: none;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid rgba(139, 149, 161, 0.5);
     font-size: 1rem;
     outline: none;
 }
@@ -51,10 +68,31 @@ input[type="text"]:focus, input[type="password"]:focus {
     border-bottom: 2px solid #E92662; /* 포커스 시 빨간색 밑줄 */
 }
 
-.keep-logged-in {
+.password-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* 아이콘과 입력란 사이의 간격 확보 */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* 입력란 오른쪽에 위치 */
+    top: 20%;
+    cursor: pointer;
+    width: 20px; /* 고정된 너비 */
+    height: 20px; /* 고정된 높이 */
+    object-fit: contain; /* 이미지의 비율을 유지하면서 맞춤 */
+}
+
+.login-container .keep-logged-in {
+    margin-top: 5px;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
     justify-content: start;
 }
 
@@ -62,14 +100,38 @@ input[type="text"]:focus, input[type="password"]:focus {
     margin-right: 10px;
 }
 
+.custom-checkbox {
+    width: 17px; /* 아이콘 너비 */
+    height: 17px; /* 아이콘 높이 */
+    cursor: pointer;
+    margin-right: 7px;
+    justify-content: center;
+}
+
+.login-container .keep-logged-in label {
+    color: #8B95A1; /* 원하는 텍스트 색상 */
+    font-weight: normal; /* 텍스트의 굵기 설정 */
+    margin-top: 0;
+    margin-bottom: 0; /* 여백 조정 */
+    font-size: 0.9rem; /* 텍스트 크기 조정 */
+}
+
+.button-container {
+     margin-top: 30px; /* 로그인 박스와 버튼 사이에 여백 추가 */
+     width: 600px; /* 로그인 박스와 버튼의 너비를 맞추기 */
+     display: flex;
+     justify-content: center; /* 버튼을 중앙에 배치 */
+ }
+
 button {
     width: 100%;
     padding: 15px;
-    background-color: #ccc;
-    color: #fff;
+    background-color: #EEEEEE;
+    color: #6B7684;
     border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: not-allowed;
 }
 
@@ -81,6 +143,7 @@ button.active {
 .warning-text {
     margin-top: 20px;
     font-size: 0.9rem;
-    color: #888;
+    color: #8B95A1;
     text-align: center;
+    justify-content: center;
 }
