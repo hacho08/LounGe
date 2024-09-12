@@ -8,11 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class ReservationHomeController {
 
-    @GetMapping("/reservation")
-    public String bookingPage() {
-        return "reservation/booking"; // 예약 페이지
-    }
-
     @GetMapping("/reservation/complete")
     public String reservationComplete(Model model) {
         // 예약 완료 화면으로 이동
