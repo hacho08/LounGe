@@ -1,39 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Pretendard', sans-serif;
-    background-color: #f8f8f8;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* 컨테이너 설정 (카테고리 필터와 검색창을 포함하는 부모) */
-.filter-container {
-    display: flex;
-    align-items: center; /* 세로 중앙 정렬 */
-    justify-content: space-between; /* 요소 사이 공간 균등 분배 */
-    gap: 20px; /* 카테고리 필터와 검색창 사이 간격 */
-    margin-bottom: 35px;
-    border: 1px solid black;
-}
-
-
 .review-container {
+    width: 100%;
+    max-width: 1150px; /* 컨테이너의 최대 너비를 설정하여 검색창이 벗어나지 않도록 함 */
     padding-left: 12.5%;
     padding-right: 12.5%;
+    margin: 0 auto; /* 컨테이너를 화면 중앙에 배치 */
+    margin-top: 10px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    width: 100%;
 }
 
 .category-filter {
     display: flex;
-    gap: 18px;
+    gap: 14px;
 }
 
 .category {
@@ -49,20 +33,10 @@ h1 {
     color: white;
 }
 
-.search-filter input {
-    color: #8B95A1;
-    width: 588px;
-    padding: 10px;
-    border-radius: 30px;
-    border: 1px solid rgba(139, 149, 161, 0.3);
-    outline: none;
-}
-
 .review-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    border: 1px solid black;
 }
 
 .review-item {
@@ -97,8 +71,33 @@ h1 {
 }
 
 .review-content {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 10px;
+}
+
+.like-section {
+    display: flex;
+    align-items: center; /* 아이콘과 숫자를 수평으로 정렬 */
+    gap: 5px; /* 아이콘과 숫자 사이의 간격 */
+}
+
+.thumbs-up-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;  /* 버튼의 크기를 줄입니다. */
+    height: 30px; /* 버튼의 크기를 줄입니다. */
+}
+
+.thumbs-up-btn img {
+    width: 20px;  /* 이미지를 더 작게 조정합니다. */
+    height: 20px;
+}
+
+.like-count {
+    font-size: 14px; /* 숫자 크기 */
+    color: #666; /* 숫자 색상 */
 }
 
 .review-footer {
@@ -107,57 +106,33 @@ h1 {
 }
 
 .pagination {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
     margin-top: 20px;
-    text-align: center;
 }
 
 .pagination a {
     text-decoration: none;
-    margin: 0 5px;
-    color: #333;
-    font-weight: bold;
-    padding: 5px 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    margin: 0 10px; /* 각 페이지 번호 사이 간격 */
+    color: #c2c2c2; /* 페이지 번호 기본 색상 */
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.pagination a.page.active {
+    color: #333; /* 선택된 페이지 색상 */
 }
 
 .pagination a:hover {
-    background-color: #ddd;
+    color: #000; /* 호버 시 색상 */
 }
 
-/*  여기부터는 테스트 용 */
-.like {
-    width: 20px;
+.pagination a.prev, .pagination a.next {
+    font-size: 18px; /* 화살표 크기 */
+    color: #c2c2c2;
 }
 
-.review-table {
-    width: 100%;
-    border-collapse: collapse; /* 셀 간격 제거 */
+.pagination a.prev:hover, .pagination a.next:hover {
+    color: #000; /* 호버 시 화살표 색상 */
 }
-
-.review-table td {
-    width: 50%;
-    padding: 20px;
-    position: relative;
-    background-color: white;
-    text-align: center;
-    vertical-align: top;
-    border: 1px solid transparent;
-}
-
-.review-item {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 리뷰 카드에 그림자 */
-}
-
-
-
-table {
-  border-collapse: collapse;
-}
-table td, table th {
-  border: 1px solid black;
-}
-
