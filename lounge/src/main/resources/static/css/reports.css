@@ -1,0 +1,71 @@
+.device-image {
+    width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #191F28;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 이미지 스타일 */
+.device-image {
+    display: block;
+    margin: 0 auto 20px auto;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 텍스트 영역 */
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    resize: none;
+    font-size: 16px;
+    font-family: inherit;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* 신고 버튼 */
+button {
+    background-color: #FF9C52;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF7A28;
+}
+
+/* 이미지와 텍스트 간격 설정 */
+#deviceText {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}

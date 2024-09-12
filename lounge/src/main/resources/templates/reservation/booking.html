@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservation Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="/css/reservation.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
 </head>
 <body>
 
-<!-- Header -->
-<div class="header">
-    <div class="header-left">
-        <div class="logo">
-            <img src="/images/icon/logo icon.png" alt="LounGe Logo">
-        </div>
-    </div>
-    <div class="header-right">
-        <button class="review-btn">
-            <img src="/images/icon/icon_write.png" alt="Review Icon">
-            리뷰
-        </button>
-        <button class="login-btn">
-            <img src="/images/icon/icon_person.png" alt="Login Icon">
-            로그인
-        </button>
-    </div>
-</div>
+<th:block th:replace="layout/fragments/header :: headerLayout"></th:block>
 
 <!-- Main Content -->
 <div class="container">
     <!-- Product Section -->
     <div class="product-box">
         <h3>스타일러</h3>
-        <img src="/images/reservation/styler/res_styler_front.png" alt="Product Image">
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide active"><img src="/images/reservation/styler/res_styler_front.png" alt="스타일러 1"></div>
+                <div class="slide"><img src="/images/reservation/styler/res_styler_front.png" alt="스타일러 2"></div>
+                <div class="slide"><img src="/images/reservation/styler/res_styler_front.png" alt="스타일러 3"></div>
+                <div class="slide"><img src="/images/reservation/styler/res_styler_front.png" alt="스타일러 4"></div>
+            </div>
+            <div class="slider-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+            </div>
+        </div>
     </div>
 
     <!-- Reservation Section (캘린더와 타임슬롯) -->
@@ -53,13 +52,13 @@
 
         <!-- Time Slots Section -->
         <div class="reservation-time-section">
-            <h3 class="reservation-time-title">
+            <span class="reservation-time-title">
                 <span>
                     <img src="/images/icon/icon_clock.png" alt="Calendar Icon" class="icon">
                     예약 시작시간
                 </span>
                 <span class="max-times-info">최대 2타임까지 예약 가능</span>
-            </h3>
+            </span>
             <div class="time-slot-selector">
                 <div class="time-slot-group">
                     <button class="time-slot-tab active" data-target="morning">오전</button>
@@ -146,14 +145,7 @@
             });
         });
 
-        // 타임 슬롯 선택
-        const slots = document.querySelectorAll('.slot');
-        slots.forEach(slot => {
-            slot.addEventListener('click', function () {
-                slots.forEach(s => s.classList.remove('selected'));
-                this.classList.add('selected');
-            });
-        });
+
 
         // Usage duration button toggle
         const usageButtons = document.querySelectorAll('.usage-button');
@@ -165,6 +157,6 @@
         });
     });
 </script>
-
+<script src="/js/reservationdetail.js"></script>
 </body>
 </html>
