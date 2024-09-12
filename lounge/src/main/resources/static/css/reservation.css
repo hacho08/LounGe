@@ -147,6 +147,8 @@ body, html {
     flex-direction: column;
     align-items: flex-start;
     width: 300px;  /* Adjust width to make it more compact */
+    height: auto;
+    overflow: visible;
     margin-top: 10px;
     margin-bottom: 10px;
     flex: 1;
@@ -169,7 +171,9 @@ body, html {
 
 /* Flatpickr 스타일 */
 .flatpickr-calendar {
-    width: 300px;
+    width: 100%;
+    height: auto;
+    overflow: visible;
     border: none;
     box-shadow: none;
     background-color: transparent;
@@ -256,7 +260,7 @@ body, html {
 }
 
 .slot {
-    background-color: #f9f9f9;
+    background-color: white;
     padding: 15px 20px;
     border-radius: 5px;
     text-align: center;
@@ -320,7 +324,8 @@ body, html {
 /* 예약 버튼 */
 .reservation-button-container {
     display: flex;
-    justify-content: flex-end; /* 오른쪽으로 정렬 */
+    align-items: flex-start;
+    justify-content: flex-start; /* 오른쪽으로 정렬 */
     margin-top: 20px;
     width: 100%; /* 부모 요소의 너비를 100%로 설정 */
 }
@@ -378,8 +383,8 @@ body, html {
 }
 
 .indicator {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     margin: 0 5px;
     background-color: lightgray;
     border-radius: 50%;

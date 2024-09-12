@@ -145,14 +145,7 @@
             });
         });
 
-        // 타임 슬롯 선택
-        const slots = document.querySelectorAll('.slot');
-        slots.forEach(slot => {
-            slot.addEventListener('click', function () {
-                slots.forEach(s => s.classList.remove('selected'));
-                this.classList.add('selected');
-            });
-        });
+
 
         // Usage duration button toggle
         const usageButtons = document.querySelectorAll('.usage-button');
@@ -164,6 +157,6 @@
         });
     });
 </script>
-
+<script src="/js/reservationdetail.js"></script>
 </body>
 </html>
