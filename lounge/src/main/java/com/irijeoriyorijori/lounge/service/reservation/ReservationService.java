@@ -1,10 +1,12 @@
 package com.irijeoriyorijori.lounge.service.reservation;
 
 import com.irijeoriyorijori.lounge.domain.reservation.Reservation;
+import com.irijeoriyorijori.lounge.dto.ReservationTimeSlotDTO;
 import com.irijeoriyorijori.lounge.repository.reservation.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
 import java.util.Calendar;
@@ -62,5 +64,22 @@ public class ReservationService {
         calendar.set(Calendar.MINUTE, 59);
         calendar.set(Calendar.SECOND, 59);
         return calendar.getTime();
+    }
+
+    //이름은 맞춰서 써주세욤
+    public List<ReservationTimeSlotDTO> findReservationTimeSlots(String productid , Date date) {
+        List<Object[]> rows = reservationRepository.findAvailabilityByProductIdAndDate(productid , date);
+
+        //귀찮지만..변환하기
+        List<ReservationTimeSlotDTO> results = new ArrayList<>();
+
+        for(Object[] row : rows) {
+            results.add( new ReservationTimeSlotDTO(
+                    (String)row[0] ,
+                    (String)row[1] ,
+                    (String)row[2] ));
+        }
+
+        return results ;
     }
 }
