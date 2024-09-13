@@ -1,12 +1,11 @@
-/* 스크롤바 숨기기 */
-.scrollable-container::-webkit-scrollbar {
-    display: none; /* 스크롤바 숨김 */
+.hidden {
+    /* display: none; /* 요소를 완전히 숨깁니다. */
+    visibility: hidden; /* 요소는 숨겨지지만 공간은 차지합니다. */
 }
+
 
 /* 전체 레이아웃 설정 */
 body, html {
-    overflow: hidden;
-
     margin: 0;
     padding: 0;
     height: 100%;
@@ -16,24 +15,27 @@ body, html {
 }
 
 .content {
-    display: flex; /* Flexbox 사용 */
-    justify-content: space-between; /* 아이템 사이의 간격 조정 */
-    align-items: center; /* 세로 정렬 */
+    width: 70%; /* 좌측 컨텐츠 넓이 설정 */
+    display: flex;
+    flex-direction: column;
 }
 
 
 /* 텍스트 영역 스타일 */
 textarea {
-    width: 80%; /* 전체 너비 */
-    height: 450px; /* 높이 설정 */
-    padding: 15px; /* 안쪽 여백 */
-    border: none; /* 테두리 색상 */
+    margin-top: 8px;
+    width: 100%; /* 전체 너비 */
+    height: 467px; /* 높이 설정 */
+    padding: 30px; /* 안쪽 여백 */
+    border: none; /* 테두리 제거 */
     border-radius: 20px; /* 모서리 둥글게 */
     font-size: 17px; /* 글자 크기 */
     resize: none; /* 크기 조절 비활성화 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
     outline: none; /* 포커스 시 테두리 강조 제거 */
+    margin-bottom: 14px;
 }
+
 
 textarea::placeholder {
     color: #999; /* 플레이스홀더 색상 */
@@ -45,16 +47,24 @@ textarea:focus {
 
 
 
-/* 버튼 스타일 */
+/* 등록하기 버튼 스타일 */
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* 버튼을 오른쪽 정렬 */
+}
+
 .submit-button {
-    margin-top: 10px; /* 위쪽 여백 */
-    padding: 10px 20px; /* 버튼 안쪽 여백 */
+    width: 219px;
+    height: 65px;
+    padding: 10px 30px; /* 버튼 안쪽 여백 조정 */
     background-color: #007BFF; /* 버튼 배경색 */
     color: white; /* 글자 색상 */
     border: none; /* 테두리 제거 */
-    border-radius: 5px; /* 모서리 둥글게 */
+    border-radius: 12px; /* 모서리 둥글게 */
     cursor: pointer; /* 커서 포인터 변경 */
-    font-size: 16px; /* 버튼 글자 크기 */
+    font-size: 24px; /* 버튼 글자 크기 */
+    font-weight: 500;
 }
 
 .submit-button:hover {
@@ -62,21 +72,19 @@ textarea:focus {
 }
 
 .container {
-    display: flex;  /* flexbox 레이아웃을 사용한다 */
-    jsutify-content: space-between; /* 요소 사이의 여백을 조정한다 */
-    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 20px;
+    margin-top: 81px;
+    position: relative; /* 부모 요소에 상대적 위치 설정 */
 }
 
 .input-area {
-    width: 70%; /* 좌우 넓이 70% */
-    flex-direction: coloumn; /* 세로방향 배치 */
-}
-
-.button-container {
-    justify-content: flex-end;
-    margin-top: 10px; /* textarea와 버튼 사이에 여백 추가 */
+    width: 100%; /* 좌우 넓이를 100%로 설정 */
+    display: flex;
+    flex-direction: column; /* 세로 방향 배치 */
+    align-items: flex-end; /* 내용물을 오른쪽 정렬 */
 }
 
 header {
@@ -87,6 +95,7 @@ header {
 }
 
 h1 {
+    margin-left: -40px;
     font-size: 24px;
     color: #191F28;
 }
@@ -106,7 +115,7 @@ main {
 
 .submit-button {
     margin-top: 10px;
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #EEEEEE;
     color: #6B7684;
     border: none;
@@ -116,80 +125,149 @@ main {
 
 
 
-
 /* 바로 이전에 클릭한 이미지 */
 .device-image {
     max-width: 100%; /* 부모 요소의 너비에 맞추어 최대 너비 설정 */
     height: auto; /* 비율을 유지하며 높이 자동 조절 */
     display: block; /* 이미지 주변의 여백 제거 */
     margin: 0 auto; /* 중앙 정렬 */
+    border-radius: 12px
 }
+
+
+
+/* 이미지 */
+.device-list-image {
+    max-width: 30%; /* 부모 요소의 너비에 맞추어 최대 너비 설정 */
+    height: auto; /* 비율을 유지하며 높이 자동 조절 */
+    display: block; /* 이미지 주변의 여백 제거 */
+    border-radius: 12px;
+    margin: 0 auto; /* 중앙 정렬 */
+    margin-right: 30px;
+}
+
+
 
 /* 이전 사용 기록 불러오기 */
 .previous-usage {
-    position: relative;
-    width: 30%; /* 좌우 넓이 30% */
-    max-height: 300px; /* 최대 높이를 설정 */
+    width: 25%; /* 우측 컨텐츠 넓이 설정 */
+    max-height: 600px;
+    padding: 10px;
+    margin-top: 30px;
+    position: relative; /* 투명 레이어가 이 요소 위로 올라올 수 있도록 설정 */
+}
+
+.search-previous {
+    display: flex;              /* Flexbox로 설정 */
+    align-items: center;        /* 수직 중앙 정렬 */
+    margin-bottom: -10px;         /* 아래 여백 줄이기용 */
+}
+
+.previous-usage-title {
+    padding_bottom: 18px;
+    color: var(--800, #333D4B);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 135%; /* 32.4px */
+}
+
+.custom-hr {
+    border: none; /* 기본 테두리 제거 */
+    height: 1px; /* 두께 설정 */
+    stroke: rgba(139, 149, 161, 0.30);
+    margin: 10px 0; /* 위 아래 간격 조정 */
+    width: 100%;
+}
+
+.search-icon {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    margin-left: auto;  /* 아이콘을 오른쪽으로 밀기 */
+}
+
+
+
+.transparnet-list {
+    display: flex;
+    position: relative; /* 부모 요소의 위치 기준을 설정 */
+}
+
+/* 스크롤바 숨기기 */
+.previous-usage-scrollable::-webkit-scrollbar {
+    display: none; /* 스크롤바 숨김 */
 }
 
 .previous-usage-scrollable {
     overflow: hidden;
-
-    width: 100%; /* 좌우 넓이 30% */
-    max-height: 300px; /* 최대 높이를 설정 */
-    overflow-y: auto; /* 세로 스크롤 허용 */
-    padding-right: 10px; /* 스크롤바와 내용 간격을 위해 패딩 추가 */
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    padding-right: 10px;
+    position: relative; /* 스크롤바와 내용 간격을 위해 패딩 추가 */
+    z-index: 1; /* 스크롤 가능한 영역이 뒤로 감 */
 }
 
-
 /* 투명 레이어 */
-.transparent-layer{
+.transparent-layer {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    position: absolute;
-    top: 120%;
+    position: absolute; /* 부모 요소의 위치 기준을 설정 */
+    top: 128%;
     left: 0;
     width: 100%;
-    height: 300px;
-    background: linear-gradient(to top, rgba(251, 251, 251, 1), rgba(251, 251, 251, 0));
+    height: 100px;
+    background: linear-gradient(to top, rgba(251, 251, 251, 1), rgba(251, 251, 251, 0.83), rgba(251, 251, 251, 0));
+    /* background: #000; */
 
     pointer-events: none;
-    z-index: 2;
+    z-index: 2; /* 투명 레이어가 이전 사용 기록 위로 올라오게 설정 */
 }
 
-.previous-devices {
-    flex: 1;
-    margin-left: 20px;
-}
 
-.previous-devices h3 {
-    margin-bottom: 10px;
-}
 
 .device-list {
     display: flex;  /* Flexbox 사용 */
     justify-content: space-between; /* 양쪽 끝으로 정렬 */
     align-items: center;    /* 수직 중앙 정렬 */
 
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 4px;
+    background-color: #fbfbfb;
+    padding: 3px;
+    border: none;
     margin-bottom: 10px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-
-    transition: opacity 0.3s ease;
-    opacity: 1;
 }
 
 .device-info {
+    flex-grow: 1; /* 남은 공간을 차지 */
     text-align: left; /* 왼쪽 정렬 */
 }
 
-.date {
-    text-align: right; /* 오른쪽 정렬 */
+
+.device-info .usage-device-name {
+    color: var(--800, #333D4B);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 135%; /* 27px */
 }
 
+.device-info .usage-device-times {
+    color: var(--900, #191F28);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+
+.date {
+    margin-left: 10px /* 날짜와 텍스트 간의 간격 */
+    text-align: right; /* 오른쪽 정렬 */
+
+    color: var(--800, #333D4B);
+    text-align: right;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+}

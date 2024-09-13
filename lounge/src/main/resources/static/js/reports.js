@@ -22,7 +22,7 @@ window.onload = function() {
             break;
         case '2':
             deviceImage.src = "/images/product/shoedresser_modal_image.png";
-            deviceText.innerText = "Shoe Dresser 고장 신고";
+            deviceText.innerText = "Shoe Case 고장 신고";
             break;
         case '3':
             deviceImage.src = "/images/product/bedroom_modal_image.png";
