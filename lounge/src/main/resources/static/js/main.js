@@ -72,8 +72,9 @@ modalBtns.forEach((btn, index) => {
         // 해당 버튼의 모달 열기
         const modal = document.getElementById(`modal${index + 1}`);
         const btnRect = btn.getBoundingClientRect();
-        modal.style.top = `${btnRect.top + window.scrollY + 50}px`;
-        modal.style.left = `${btnRect.left + window.scrollX - 50}px`;
+        // 모달창의 위치 조정
+        modal.style.top = `${btnRect.top + window.scrollY - 270}px`;
+        modal.style.left = `${btnRect.left + window.scrollX - 200}px`;
         modal.style.display = "flex";
 
         // 클릭된 버튼에 active 클래스 추가 및 다른 버튼 축소
