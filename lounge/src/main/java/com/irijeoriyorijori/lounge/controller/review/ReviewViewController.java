@@ -25,12 +25,12 @@ public class ReviewViewController {
     @GetMapping("/review")
     public String getReviews(
             @RequestParam(value = "page", defaultValue = "1") int page, HttpSession session,
-
             Model model) {
 
-//        // 로그인 여부 확인 - 로그아웃 헤더를 위해
-//        boolean isLoggedIn = session.getAttribute("userId") != null;
-//        model.addAttribute("isLoggedIn", isLoggedIn);
+        // 세션이 존재하지 않으면 false로 설정
+        boolean isLoggedIn = session != null && session.getAttribute("userId") != null;
+        model.addAttribute("isLoggedIn", isLoggedIn);
+
 
         int start = (page - 1) * REVIEWS_PER_PAGE + 1;
         int end = page * REVIEWS_PER_PAGE;
@@ -67,7 +67,8 @@ public class ReviewViewController {
             redirectAttributes.addFlashAttribute("message", "로그인이 필요합니다.");
             return "redirect:/login";
         }
-
+        // 로그인된 상태라면, 로그아웃 버튼을 표시하도록 isLoggedIn 설정
+        model.addAttribute("isLoggedIn", true);
         // 로그인된 상태라면, 페이지 구분을 위한 변수 설정
         model.addAttribute("isReviewListPage", false);  // 리뷰 작성 페이지
 

@@ -37,6 +37,9 @@ public class LoginViewController {
             redirectAttributes.addAttribute("redirectTo", "/report");
             return "redirect:/login";
         }
+        // 로그인된 상태라면 로그아웃 버튼을 표시하도록 설정
+        model.addAttribute("isLoggedIn", true);
+
         // 세션이 있을 경우 보고서 페이지 처리
         return "reports/reports";
 

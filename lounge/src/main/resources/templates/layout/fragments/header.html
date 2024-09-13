@@ -17,10 +17,17 @@
             </a>
 
 
-            <a href="/login">
-                <button class="btn login-btn">
-                    <img th:src="@{/images/icon/icon_person.png}" alt="User Icon" class="header-icon"> 로그인
-                </button>
+            <!--            <a href="/login">-->
+            <!--                <button class="btn login-btn">-->
+            <!--                    <img th:src="@{/images/icon/icon_person.png}" alt="User Icon" class="header-icon"> 로그인-->
+            <!--                </button>-->
+            <!--            </a>-->
+
+            <a th:if="${isLoggedIn != null and isLoggedIn}" th:href="@{/logout}">
+                <button class="btn login-btn">로그아웃</button>
+            </a>
+            <a th:if="${isLoggedIn == null or !isLoggedIn}" th:href="@{/login}">
+                <button class="btn login-btn">로그인</button>
             </a>
 
         </div>
