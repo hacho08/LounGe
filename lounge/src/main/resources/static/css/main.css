@@ -40,12 +40,12 @@ body, html {
     border: 1px solid #ddd;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
+
 /* What's New 영역 */
 .whats-new {
-    margin-bottom: 6%;
     padding-left : 4%;
+    margin-bottom : 65px;
 }
 
 .whats-new-title {
@@ -80,7 +80,6 @@ li {
 .real-time-status {
     background-color: #fff;
     padding: 20px;
-    padding-left : 35px;
 }
 
 .real-time-status h2 {
@@ -146,11 +145,12 @@ li {
     background-image: url('/images/main/main_lounge.png');
     background-size: cover;
     background-position: center;
-    border: 1px solid #ddd;
+    border: 1px rgba(0, 0, 0, 10);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-right: 135px;
 }
 
 /* + 버튼 스타일 */
@@ -201,8 +201,8 @@ li {
 .modal {
     display: none;
     position: absolute;
-    background: linear-gradient(to bottom, #FFF6EF, #FFE7D4); /* 그라데이션 적용 */
-    padding: 20px;
+    background: linear-gradient(to bottom, #FFEEE2, #FFFEFD); /* 그라데이션 적용 */
+    padding: 28px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     border-radius: 15px;
@@ -211,9 +211,11 @@ li {
     justify-content: space-between;
     align-items: center;
 }
+
 .modal img {
-    width: 250px;
-    border-radius: 10px;
+    width: 180px;
+    hight: 199px;
+    border-radius: 12px;
 }
 .modal-content {
     display: flex;
@@ -222,10 +224,12 @@ li {
 }
 
 .modal h2 {
-    margin-bottom: 20px;
+    margin-left: 3px;
+    margin-bottom: 64px;
     font-size: 24px;
     color: #191F28;
 }
+
 .modal-content button {
     padding: 15px 30px;
     font-size: 18px;
@@ -235,10 +239,12 @@ li {
     border-radius: 10px;
 }
 .reservation-btn {
+    width: 180px;
     background-color: #FF9C52;
     color: white;
 }
 .report-btn {
+    width: 180px;
     background-color: #EEEEEE;
     color: #4E5968;
 }
