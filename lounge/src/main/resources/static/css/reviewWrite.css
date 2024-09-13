@@ -3,7 +3,6 @@
     visibility: hidden; /* 요소는 숨겨지지만 공간은 차지합니다. */
 }
 
-
 /* 전체 레이아웃 설정 */
 body, html {
     margin: 0;

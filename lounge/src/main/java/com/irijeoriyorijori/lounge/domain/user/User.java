@@ -8,15 +8,16 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name="user")
+@Table(name="TB_USER")
 public class User {
     @Id
-    @Column(name = "user_id")
+    @Column(name = "USER_ID")
     private String userId;
 
+    @Column(name = "PASSWORD")
     private String password;
 
-    @Column(name = "created_at")
+    @Column(name = "CREATED_AT")
     private Date createdAt;
 
     // Getter Setter
