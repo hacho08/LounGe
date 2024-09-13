@@ -22,7 +22,7 @@ public class LoginViewController {
     public String loginPage(@RequestParam(value = "redirectTo", required = false) String redirectTo, HttpSession session) {
         if (session.getAttribute("userId") != null) {
             if (redirectTo != null && !redirectTo.isEmpty()) {
-                return redirectTo;  // 이전 페이지로 리다이렉트
+                return "redirect:" + redirectTo;  // 이전 페이지로 리다이렉트
             }
             return "redirect:/main";  // 기본적으로 홈 화면으로 이동
         }
@@ -31,7 +31,7 @@ public class LoginViewController {
 
 
     @GetMapping("/report")
-    public String reportPage(HttpSession session, RedirectAttributes redirectAttributes) {
+    public String reportPage(HttpSession session, Model model, RedirectAttributes redirectAttributes) {
         if (session.getAttribute("userId") == null) {
             // 리다이렉트 시 파라미터 전달
             redirectAttributes.addAttribute("redirectTo", "/report");
@@ -39,6 +39,8 @@ public class LoginViewController {
         }
         // 세션이 있을 경우 보고서 페이지 처리
         return "reports/reports";
+
+
     }
 }
 

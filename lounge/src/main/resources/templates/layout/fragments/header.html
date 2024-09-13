@@ -1,4 +1,3 @@
-<!-- header.html -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:fragment="headerLayout">
@@ -10,10 +9,23 @@
             </a>
         </div>
         <div class="header-right">
-            <a href="/review"><button class="btn review-btn"><img th:src="@{/images/icon/icon_write.png}" alt="Write Icon" class="header-icon">리뷰</button></a>
-            <a href="/login"><button class="btn login-btn"><img th:src="@{/images/icon/icon_person.png}" alt="User Icon" class="header-icon"> 로그인</button></a>
+            <!-- 리뷰 버튼 링크를 동적으로 설정 -->
+            <a th:href="${isReviewListPage} ? '/review-write' : '/review'">
+                <button class="btn review-btn">
+                    <img th:src="@{/images/icon/icon_write.png}" alt="Write Icon" class="header-icon"> 리뷰
+                </button>
+            </a>
+
+
+            <a href="/login">
+                <button class="btn login-btn">
+                    <img th:src="@{/images/icon/icon_person.png}" alt="User Icon" class="header-icon"> 로그인
+                </button>
+            </a>
+
         </div>
     </header>
     <hr>
+
 </th:block>
 </html>

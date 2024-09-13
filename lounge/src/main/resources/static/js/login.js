@@ -71,18 +71,48 @@ document.querySelector('.reservation-button').addEventListener('click', function
 
 document.querySelectorAll('.report-btn').forEach(button => {
     button.addEventListener('click', function() {
-        fetch('/session-check')
-        .then(response => {
-            if (response.status === 200) {
+       fetch('/session-check')
+        .then(response => response.json())  // JSON 형태로 응답을 받습니다.
+        .then(data => {
+            console.log('세션 체크 결과:', data);  // 세션 체크 결과 로그 출력
+            if (data.loggedIn) {  // 세션이 있으면 고장 신고 페이지로 이동
                 // 고장 신고 페이지로 이동
                 window.location.href = this.getAttribute('href');
             } else {
                 // 로그인 페이지로 이동
                 window.location.href = '/login.html?redirectTo=' + encodeURIComponent(this.getAttribute('href'));
             }
-        });
     });
+})
 });
+//document.querySelectorAll('.report-btn').forEach(button => {
+//    button.addEventListener('click', function(event) {
+//        event.preventDefault();  // 기본 동작을 막고, 이후에 세션 체크 처리
+//
+//        const reportUrl = this.querySelector('a').getAttribute('href');  // a 태그의 href 값을 가져옴
+//
+//        fetch('/session-check')
+//        .then(response => {
+//            if (response.ok) {
+//                return response.json();  // JSON 응답 처리
+//            } else {
+//                throw new Error('세션 체크 실패');
+//            }
+//        })
+//        .then(data => {
+//            if (data.loggedIn) {
+//                window.location.href = reportUrl;  // 세션이 있으면 고장 신고 페이지로 이동
+//            } else {
+//                window.location.href = '/login?redirectTo=' + encodeURIComponent(reportUrl);  // 세션이 없으면 로그인 페이지로 이동
+//            }
+//        })
+//        .catch(error => {
+//            console.error('세션 체크 중 오류 발생:', error);
+//            alert('서버 오류가 발생했습니다.');
+//        });
+//    });
+//});
+
 
 
 function checkFields() {

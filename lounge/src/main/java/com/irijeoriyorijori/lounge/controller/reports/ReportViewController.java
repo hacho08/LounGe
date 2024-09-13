@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public class ReportViewController {
 
-	@GetMapping("/report")
-	public String report(@RequestParam(name="device") String device) {
-		return "reports/reports";
-	}
+//	@GetMapping("/report")
+//	public String report(@RequestParam(name="device") String device) {
+//		return "reports/reports";
+//	}
 
 }
 

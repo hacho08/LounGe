@@ -89,20 +89,20 @@ modalBtns.forEach((btn, index) => {
     });
 });
 
-// 고장신고 버튼 클릭 시 로그인 상태 확인 후 리디렉션
-document.querySelectorAll('.report-btn').forEach(button => {
-    button.addEventListener('click', async (event) => {
-        const isLoggedIn = await checkLoginStatus();
-        if (isLoggedIn) {
-            // 세션이 있을 경우 고장신고 페이지로 이동
-            window.location.href = button.querySelector('a').href;
-        } else {
-            // 세션이 없을 경우 로그인 페이지로 이동
-            window.location.href = '/login';
-        }
-        event.preventDefault(); // 링크 기본 동작 방지
-    });
-});
+//// 고장신고 버튼 클릭 시 로그인 상태 확인 후 리디렉션
+//document.querySelectorAll('.report-btn').forEach(button => {
+//    button.addEventListener('click', async (event) => {
+//        const isLoggedIn = await checkLoginStatus();
+//        if (isLoggedIn) {
+//            // 세션이 있을 경우 고장신고 페이지로 이동
+//            window.location.href = button.querySelector('a').href;
+//        } else {
+//            // 세션이 없을 경우 로그인 페이지로 이동
+//            window.location.href = '/login';
+//        }
+//        event.preventDefault(); // 링크 기본 동작 방지
+//    });
+//});
 
 // 모달 외부 클릭 시 닫기
 window.addEventListener('click', function(event) {

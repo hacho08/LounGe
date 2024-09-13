@@ -179,7 +179,7 @@
                         <button class="thumbs-up-btn">
                             <img src="images/icon/icon_thumbsup.png" alt="좋아요">
                         </button>
-                        <span class="like-count" th:text="${review.likeCount}">0</span>
+<!--                        <span class="like-count" th:text="${review.likeCount}">0</span>-->
                     </span>
             </div>
         </div>
@@ -188,7 +188,7 @@
     <div class="pagination">
         <a th:href="@{/review?page=${currentPage - 1}}" class="prev" th:if="${currentPage > 1}">‹</a>
         <a th:each="pageNum : ${#numbers.sequence(1, totalPages)}"
-           th:href="@{/review?page=${pageNum}}"
+           th:href="@{/review(page=${pageNum})}"
            th:text="${pageNum}"
            th:classappend="${pageNum == currentPage ? ' active' : ''}"></a>
         <a th:href="@{/review?page=${currentPage + 1}}" class="next" th:if="${currentPage < totalPages}">›</a>
