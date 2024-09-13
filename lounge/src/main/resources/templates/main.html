@@ -11,6 +11,7 @@
 
 </head>
 <body>
+<!-- 상단 영역 -->
 <th:block th:replace="layout/fragments/header :: headerLayout"></th:block>
 <div class="container">
     <!-- 하단 영역 (사이드바 + 메인 컨텐츠) -->
@@ -60,10 +61,10 @@
                 <div class="lounge-name">럭키골드대학교 라운지</div>
 
                 <!-- 4개의 + 버튼 추가 -->
-                <div class="plus-button" id="modalBtn1" style="top: 260px; left: 330px;">+</div>
-                <div class="plus-button" id="modalBtn2" style="top: 160px; left: 430px;">+</div>
-                <div class="plus-button" id="modalBtn3" style="top: 210px; left: 130px;">+</div>
-                <div class="plus-button" id="modalBtn4" style="top: 60px; left: 230px;">+</div>
+                <div class="plus-button" id="modalBtn1" style="top: 45%; left: 50%;">+</div>
+                <div class="plus-button" id="modalBtn2" style="top: 47%; left: 82%;">+</div>
+                <div class="plus-button" id="modalBtn3" style="top: 38%; left: 32%;">+</div>
+                <div class="plus-button" id="modalBtn4" style="top: 20%; left: 40%;">+</div>
             </div>
         </div>
     </div>
@@ -74,28 +75,27 @@
 <div class="modal" id="modal1">
     <div class="modal-content">
         <h2>Styler</h2>
-        <button class="reservation-btn"><a href="/reservation" class="button">예약</a></button>
-        <button class="report-btn"><a href="/report?device=1" class="button">신고접수</a></button>
-
+        <button class="reservation-btn"><a href="/reservation?productId=1" class="button">예약</a></button>
+        <button class="report-btn"><a href="/report?device=1" class="button">고장신고</a></button>
     </div>
     <img src="/images/product/styler_modal_image.png" alt="1) 스타일러">
 </div>
 
-<!-- Modal 2 (Shoe Dresser) -->
+<!-- Modal 2 (Shoe Case) -->
 <div class="modal" id="modal2">
     <div class="modal-content">
-        <h2>Shoe Care</h2>
-        <button class="reservation-btn"><a href="/reservation" class="button">예약</a></button>
-        <button class="report-btn"><a href="/report?device=2" class="button">신고접수</a></button>
+        <h2>Shoe Case</h2>
+        <button class="reservation-btn"><a href="/reservation?productId=2" class="button">예약</a></button>
+        <button class="report-btn"><a href="/report?device=2" class="button">고장신고</a></button>
     </div>
-    <img src="/images/product/shoedresser_modal_image.png" alt="2) 슈드레서">
+    <img src="/images/product/shoedresser_modal_image.png" alt="2) 슈케이스">
 </div>
 
 <!-- Modal 3 (수면 케어룸) -->
 <div class="modal" id="modal3">
     <div class="modal-content">
         <h2>수면 케어룸</h2>
-        <button class="reservation-btn"><a href="/reservation" class="button">예약</a></button>
+        <button class="reservation-btn"><a href="/reservation?productId=3" class="button">예약</a></button>
         <button class="report-btn"><a href="/report?device=3" class="button">신고접수</a></button>
     </div>
     <img src="/images/product/bedroom_modal_image.png" alt="3) 수면 케어룸">
@@ -105,7 +105,7 @@
 <div class="modal" id="modal4">
     <div class="modal-content">
         <h2>Healing Me</h2>
-        <button class="reservation-btn"><a href="/reservation" class="button">예약</a></button>
+        <button class="reservation-btn"><a href="/reservation?productId=4" class="button">예약</a></button>
         <button class="report-btn"><a href="/report?device=4" class="button">신고접수</a></button>
     </div>
     <img src="/images/product/healingme_modal_image.png" alt="4) 힐링미 안마의자">

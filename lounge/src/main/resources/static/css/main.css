@@ -1,4 +1,4 @@
- /* Pretendard Variable 폰트 적용 */
+/* Pretendard Variable 폰트 적용 */
 @font-face {
     font-family: 'Pretendard';
     src: url('/fonts/PretendardVariable.ttf') format('truetype');
@@ -18,60 +18,24 @@ body, html {
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 1000px;
     padding: 20px;
 }
 
-/* 상단 영역 (헤더) */
-.header {
-    background-color: #f8f8f8;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-}
-.header .logo img {
-    width: 150px;
-}
-.header .nav-buttons {
-    display: flex;
-    gap: 20px;
-}
-
-
-/* 리뷰와 로그인 버튼 스타일 */
-.header button {
-    display: flex;
-    align-items: center; /* 텍스트와 이미지를 수직으로 가운데 정렬 */
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-/* 버튼 안의 이미지 스타일 */
-.header button img {
-    width: 20px; /* 아이콘 크기 */
-    height: 20px;
-    margin-right: 8px; /* 이미지와 텍스트 간 간격 */
-
-}
-.header button:hover {
-    background-color: #eee;
-}
 /* 하단 영역 (사이드바 + 메인 컨텐츠) */
 .content {
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
+    margin-left: 10%;
 }
 .sidebar {
-    width: 25%;
+    width: 19%;
+    height: 730px;
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
     display: flex;
@@ -80,8 +44,8 @@ body, html {
 }
 /* What's New 영역 */
 .whats-new {
-    margin-bottom: 20px;
-    padding-left : 35px;
+    margin-bottom: 6%;
+    padding-left : 4%;
 }
 
 .whats-new-title {
@@ -150,6 +114,7 @@ li {
 /* 공기 청정도 도표 */
 .air-quality-bar {
     width: 100%;
+    max-width: 500px;
     height: 20px;
     background-color: #e0e0e0;
     border-radius: 5px;
@@ -176,8 +141,8 @@ li {
 }
 
 .three-d-space {
-    width: 700px;
-    height: 560px;
+    width: 1000px;
+    height: 700px;
     background-image: url('/images/main/main_lounge.png');
     background-size: cover;
     background-position: center;
@@ -236,7 +201,7 @@ li {
 .modal {
     display: none;
     position: absolute;
-    background: linear-gradient(to bottom, #FFE7D4, #FFFFFF); /* 그라데이션 적용 */
+    background: linear-gradient(to bottom, #FFF6EF, #FFE7D4); /* 그라데이션 적용 */
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
