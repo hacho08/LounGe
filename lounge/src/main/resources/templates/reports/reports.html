@@ -3,75 +3,80 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>고장신고</title>
+	<title>리뷰 작성</title>
 	<link rel="stylesheet" href="/css/reports.css">
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 	<script src="/js/reports.js"></script>
 </head>
 
-
 <body>
+<!-- 상단 -->
 <th:block th:replace="layout/fragments/header :: headerLayout"></th:block>
 
+<!-- 하단 -->
 <div class="container">
 
+	<!-- 하단 좌측 -->
 	<div class="content">
-
+		<h1>신고 접수</h1>
 		<div class="input-area">
-			<h1>신고 접수</h1>
-
 			<textarea id="reportTextarea" placeholder="기기나 시설의 고장이 발생하면 신고해 주세요.
-문제를 신속히 해결해 드리겠습니다." rows="20" cols="50"></textarea>
+문제를 신속히 해결해 드리겠습니다 :)" rows="20" cols="50"></textarea>
 
 			<div class="button-container">
 				<button class="submit-button">등록하기</button>
 			</div>
 		</div>
+	</div>
+
+	<!-- 하단 우측 -->
+	<div class="previous-usage">
+
+		<!-- main에서 클릭한 이미지 가져오기-->
+		<div class="image-container">
+			<img id="deviceImage" class="device-image" src="" alt="기기 이미지">
+		</div>
+
+		<div class="search-previous">
+			<h3 class="previous-usage-title">이전에 사용한 기기</h3>
+			<img src="/images/icon/icon_search.png" alt="🔍" class="hidden">
+		</div>
+		<hr class="custom-hr">
 
 
-		<div class="previous-usage">
-
-			<!-- main에서 클릭한 이미지 가져오기-->
-			<div class="image-container">
-				<img id="deviceImage" class="device-image" src="" alt="기기 이미지">
-			</div>
-
-			<!-- 이전 사용기기를 표시할 내용 추가 -->
-			<h3>이전 이용 이력</h3>
-
+		<div class="transparent-list">
 			<!-- 이전 사용 기기 스크롤 가능 -->
 			<div class="previous-usage-scrollable">
-				<br></br>
 				<div class="device-list">
+					<img src="/images/product/styler_modal_image.png" alt="스타일러" class="device-list-image">
 					<div class="device-info">
-						<p>스타일러</p>
-						<p>1회 사용</p>
+						<p class="usage-device-name">스타일러</p>
+						<p class="usage-device-times">1회 사용</p>
+						<p class="date">2024-09-14</p>
 					</div>
-					<p class="date">2024-09-14</p>
 				</div>
-
 				<div class="device-list">
+					<img src="/images/product/healingme_modal_image.png" alt="힐링미" class="device-list-image">
 					<div class="device-info">
-						<p>힐링미</p>
-						<p>2회 사용</p>
+						<p class="usage-device-name">힐링미</p>
+						<p class="usage-device-times">3회 사용</p>
+						<p class="date">2024-09-14</p>
 					</div>
-					<p class="date">2024-09-14</p>
 				</div>
-
 				<div class="device-list">
+					<img src="/images/product/standbyme_modal_image.png" alt="스탠바이미" class="device-list-image">
 					<div class="device-info">
-						<p>스탠바이미</p>
-						<p>2회 사용</p>
+						<p class="usage-device-name">스탠바이미</p>
+						<p class="usage-device-times">2회 사용</p>
+						<p class="date">2024-09-13</p>
 					</div>
-					<p class="date">2024-09-13</p>
 				</div>
 			</div>
-
 
 			<!-- 이전 사용 기기 스크롤 위 투명도 레이어 -->
 			<div class="transparent-layer"></div>
-
 		</div>
+
 	</div>
 </div>
 

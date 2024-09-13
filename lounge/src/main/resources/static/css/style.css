@@ -12,6 +12,7 @@ body {
     margin: 0; /* 기본적인 여백을 제거 */
     padding: 0;
 }
+
 /* Header styling */
 .header {
     display: flex;
@@ -22,7 +23,6 @@ body {
     background-color: white;
     padding-left: 12.5%;
     padding-right: 12.5%;
-
 }
 
 .header-left {
