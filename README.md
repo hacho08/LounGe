@@ -98,22 +98,18 @@
 <img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
-😀 이름 : 강윤석
-🧑🏻‍💻 학번 : xxxx3082
-📧 이메일 : ysck73@kookmin.ac.kr
-
+😀 이름 : ㅇㅇㅇ
+ㅇ
 📌 역할 : System Engineer
     - 드론 엔지니어링 및 시뮬레이션
     - 비디오 실시간 스트리밍 서비스 구축
 ```
 
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
+<img align="left" src="https://ㅇ/u/35187793?v=4" width="180" height="170" >
 
 ```
-😀 이름 : 권소예
-🧑🏻‍💻 학번 : xxxx1552
-📧 이메일 : soye0710@kookmin.ac.kr
+😀 이름 : ㅇㅇㅇ
 
 📌 역할 : Front-end
     - UI/UX 디자인 및 개발
@@ -121,25 +117,21 @@
 ```
 
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
+<img align="left" src="https://ㅇㅇsercontent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
-😀 이름 : 박민준
-🧑🏻‍💻 학번 : xxxx1611
-📧 이메일 : pmj4138@kookmin.ac.kr
-업
+😀 이름 : ㅇㅇㅇ
+
 📌 역할 : Back-end
     - 서버 구축 및 AWS 작업
     - API 작업
 ```
 
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
+<img align="left" src="https://aㅇntent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
-😀 이름 : 서정현
-🧑🏻‍💻 학번 : xxxx1383
-📧 이메일 : jh04270312@kookmin.ac.kr
+😀 이름 : ㅇㅇㅇ
 
 📌 역할 : AI, Leader
     - 딥러닝 모델 구축 및 학습
@@ -147,12 +139,10 @@
 ```
 
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
+<img align="left" src="httpsㅇm/u/35187793?v=4" width="180" height="170" >
 
 ```
-😀 이름 : 이재원
-🧑🏻‍💻 학번 : xxxx0498
-📧 이메일 : ljwljy51@kookmin.ac.kr
+😀 이름 :ㅇㅇㅇㅇ
 
 📌 역할 : AI
     - 딥러닝 모델 구축 및 학습
@@ -160,12 +150,10 @@
 ```
 
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
+<img align="left" src="https://ㅇ3?v=4" width="180" height="170" >
 
 ```
 😀 이름 : 조현아
-🧑🏻‍💻 학번 : xxxx2912
-📧 이메일 : chcho0819@kookmin.ac.kr
 
 📌 역할 : PM, Back-end
     - 매핑 알고리즘 구현
@@ -201,40 +189,35 @@ github의 issue와 pull request기능을 활용해 프로젝트 작업 진행
 
 ## ✨ 기대 효과
 
-<code>인공지능 기술을 적용하여 관제 인력 부족의 문제를 해결할 수 있습니다. </code>
+<code>ㅇ </code>
  <br/>
  
-실시간으로 영상을 계속해서 확인하려면 많은 인력이 필요한데 현재 관제 인력 부족의 문제가 존재합니다. 우리는 드론의 카메라에 인공지능 기술을 적용하여 이러한 인력 부족의 문제를 해결하고 이에 따라 관리자는 관리자 페이지에서 실시간 영상을 통해 인구 밀집 정도를 확인하고 위험한 상황이 발생한 경우에도 빠른 대처가 가능합니다.
+ㅇ
 <br/>
 <br/>
 
-<code>야외 행사마다 매번 CCTV를 설치하는 번거로움을 줄일 수 있습니다.</code>
+<code>ㅇ</code>
  <br/>
  
-야외 행사마다 안전한 행사를 위해 매번 CCTV를 설치하고 해체해야 한다는 번거로움이 존재했는데 이러한 CCTV의 역할을 드론을 통해 해결할 수 있습니다. 우리의 서비스를 이용하면 매번 CCTV를 설치하는데 추가적으로 들어가는 비용을 절감할 수 있습니다. 추가적으로 CCTV를 설치해야 할 때 필수적으로 고려해야하는 사각지대의 문제점을 드론을 통해 해결할 수 있습니다.
+ㅇ
 <br/>
 <br/>
 
-<code>축제를 즐기는 일반 시민들도 실시간으로 손쉽게 정보를 확인할 수 있습니다. </code>
+<code>축ㅇㅇ다. </code>
  <br/>
  
-기존의 관리자 중심의 관제 서비스로 인해 실시간 정보는 관리자만 확인이 가능했고 축제를 즐기는 일반 시민들은 인구 밀집 정보에 대한 확인이 쉽지 않다는 단점이 존재했었습니다. 이와 달리 우리는 시민들에게도 손쉽게 휴대폰으로 인구 밀집도가 표시된 지도를 확인할 수 있도록 서비스를 제공하여 안전한 행사를 즐길 수 있습니다.
+ㅇ
 <br/>
 <br/>
 
-<code>추후 활용 방안</code>
+<code>ㅇ</code>
  <br/>
  
-단순한 일회성의 서비스가 아닌 우리의 서비스를 우선 구축해 놓으면 반영구적으로 사용이 가능하다는 장점이 있습니다. 드론에 추가적인 인공지능 기술 등을 도입하여 인구 밀집도 파악 뿐만 아니라 교통 상황을 실시간으로 판단하는 드론 등과 같이 다양한 방면으로 목적에 맞게 이용이 가능하기 때문에 확장성 측면에서도 충분히 활용이 가능합니다.
+ㅇ
 
 
 <br/><br/>
 
 ## 🔑 관련 문서
 
-### [중간 발표 자료](docs/팀26조-중간발표자료.pdf)
-### [중간 보고서](docs/팀26조-중간보고서.pdf)  
-### [시연 동영상](docs/팀26조-시연동영상.mp4) 
-### [포스터](docs/팀26조-포스터.pdf)  
-### [최종 발표 자료](docs/팀26조-최종발표자료.pdf) 
-### [결과 보고서](https://github.com/kookmin-sw/capstone-2023-26/blob/main/docs/%E1%84%90%E1%85%B5%E1%86%B726%E1%84%8C%E1%85%A9-%E1%84%80%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA%E1%84%87%E1%85%A9%E1%84%80%E1%85%A9%E1%84%89%E1%85%A5.pdf)
+### [중간 발표 자료](docs/ㅇㅇ.pdf)
