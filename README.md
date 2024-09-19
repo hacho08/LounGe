@@ -5,14 +5,14 @@
 # LounGe
 
 <div align=center>
-  <img src="https://img.shields.io/badge/oracle-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
+  <img src="https://img.shields.io/badge/oracle-FF4154?style=for-the-badge&logo=oracle&logoColor=white">
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
   <img src="https://img.shields.io/badge/Javascript-DB7093?style=for-the-badge&logo=javascript&logoColor=white"/>
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/jpa-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
-  <img src="https://img.shields.io/badge/thymeleaf-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
-  <img src="https://img.shields.io/badge/springboot-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
+  <img src="https://img.shields.io/badge/jpa-FF4154?style=for-the-badge&logo=jpa&logoColor=white">
+  <img src="https://img.shields.io/badge/thymeleaf-FF4154?style=for-the-badge&logo=thymeleaf&logoColor=white">
+  <img src="https://img.shields.io/badge/springboot-FF4154?style=for-the-badge&logo=springboot&logoColor=white">
 </div>
 
 <img alt="main_img" src="lounge/src/main/resources/static/images/main/main_lounge.png">
