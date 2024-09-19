@@ -95,11 +95,11 @@
 ## 💁🏻 팀원 소개
 
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
+<img align="left" src="https://avataㅇtent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
 😀 이름 : ㅇㅇㅇ
-ㅇ
+
 📌 역할 : System Engineer
     - 드론 엔지니어링 및 시뮬레이션
     - 비디오 실시간 스트리밍 서비스 구축
