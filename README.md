@@ -5,14 +5,20 @@
 # LounGe
 
 <div align=center>
-  <img src="https://img.shields.io/badge/oracle-FF4154?style=for-the-badge&logo=oracle&logoColor=white">
+  
+  ### Front
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
   <img src="https://img.shields.io/badge/Javascript-DB7093?style=for-the-badge&logo=javascript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/jpa-FF4154?style=for-the-badge&logo=jpa&logoColor=white">
   <img src="https://img.shields.io/badge/thymeleaf-FF4154?style=for-the-badge&logo=thymeleaf&logoColor=white">
+  
+  ### Back
   <img src="https://img.shields.io/badge/springboot-FF4154?style=for-the-badge&logo=springboot&logoColor=white">
+  <img src="https://img.shields.io/badge/oracle-FF4154?style=for-the-badge&logo=oracle&logoColor=white">
+  
+  ### 협업 툴 
+  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+  
 </div>
 
 <img alt="main_img" src="lounge/src/main/resources/static/images/main/main_lounge.png">
@@ -45,10 +51,11 @@
 
 <img alt="main_img" src="img/device_frame.png">
 
-<code>adsf</code>
+<code>LG전자의 미래 고객인 대학생을 대상으로 한 교내 라운지 서비스를 원활하게 운영하기 위해 웹페이지 구현</code>
 <br/>
+프로젝트기간
+2024년 9월 2일 ~ 9월 12일
 
-asdf :) 
 
 <br/><br/>
 
@@ -58,7 +65,7 @@ asdf :)
   <img src="img/GIF6.gif" alt="GIF 2" width="410" />
 </div>
 
- <code>asdf </code>
+ <code>‘LounGe’ 공간에 배치된 제품 예약 </code>
  <br/>
 
  asdf
