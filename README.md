@@ -93,72 +93,26 @@
 <br/><br/>
 
 ## 💁🏻 팀원 소개
-
-
-<img align="left" src="https://avataㅇtent.com/u/35187793?v=4" width="180" height="170" >
-
 ```
-😀 이름 : ㅇㅇㅇ
-
-📌 역할 : System Engineer
-    - 드론 엔지니어링 및 시뮬레이션
-    - 비디오 실시간 스트리밍 서비스 구축
+김나린 : Frontend 개발자 🥰
 ```
-
-
-<img align="left" src="https://ㅇ/u/35187793?v=4" width="180" height="170" >
-
 ```
-😀 이름 : ㅇㅇㅇ
-
-📌 역할 : Front-end
-    - UI/UX 디자인 및 개발
-    - git 관리
+이상현 : 3D 디자이너 😎
+```
+```
+이지민 : Web 디자이너 😝
+```
+```
+이하연 : Backend 개발자 😳
+```
+```
+임정현 : Frontend 개발자 😏
+```
+```
+조현아 : Backend 개발자 🤓
 ```
 
 
-<img align="left" src="https://ㅇㅇsercontent.com/u/35187793?v=4" width="180" height="170" >
-
-```
-😀 이름 : ㅇㅇㅇ
-
-📌 역할 : Back-end
-    - 서버 구축 및 AWS 작업
-    - API 작업
-```
-
-
-<img align="left" src="https://aㅇntent.com/u/35187793?v=4" width="180" height="170" >
-
-```
-😀 이름 : ㅇㅇㅇ
-
-📌 역할 : AI, Leader
-    - 딥러닝 모델 구축 및 학습
-    - 학습 데이터셋 수집
-```
-
-
-<img align="left" src="httpsㅇm/u/35187793?v=4" width="180" height="170" >
-
-```
-😀 이름 :ㅇㅇㅇㅇ
-
-📌 역할 : AI
-    - 딥러닝 모델 구축 및 학습
-    - API 작업
-```
-
-
-<img align="left" src="https://ㅇ3?v=4" width="180" height="170" >
-
-```
-😀 이름 : 조현아
-
-📌 역할 : PM, Back-end
-    - 매핑 알고리즘 구현
-    - API 작업
-```
 
 <br/><br/>
 
